@@ -29,100 +29,9 @@ env:
   TARGET_NAME_rpm: "Hiddify-rpm-x64"
 
 jobs:
-  build_linux:
-    permissions: write-all
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2.16.0
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: 'stable'
-          cache: true
-
-      - name: Setup dependencies
-        run: make linux-install-dependencies
-
-      - name: Prepare for Linux
-        run: make linux-prepare
-
-      - name: Build Linux
-        env:
-          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
-        run: make linux-release
-
-      - name: Copy to out Linux
-        run: |
-          ls -R dist/
-          mkdir out
-          mkdir tmp_out
-          for EXT in AppImage deb rpm; do
-            KEY=TARGET_NAME_${EXT}
-            FILENAME=${!KEY}
-            echo "For $EXT ($KEY) filename is ${FILENAME}"
-            mv dist/*/*.$EXT tmp_out/${FILENAME}.$EXT
-            ls tmp_out
-            chmod +x tmp_out/${FILENAME}.$EXT
-            cp ./.github/help/linux/* tmp_out/
-            mv tmp_out/${FILENAME}.$EXT out/
-          done
-
-      - name: Upload Linux Artifact
-        if: env.UPLOAD_ARTIFACT == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: linux
-          path: ./out
-          retention-days: 1
-
-  build_apk:
-    permissions: write-all
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2.13.0
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: 'stable'
-          cache: true
-          
-      - name: Set up JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: '17'
-          
-      - name: Prepare for Android
-        run: |
-          make android-prepare
-          tree
-          
-      - name: Install Dependencies
-        run: |
-          flutter pub get
-          dart run build_runner build --delete-conflicting-outputs
-          dart run slang
-
-      - name: Build APK
-        run: |
-          flutter build apk --release
-
-      - name: Upload APK Artifact
-        if: env.UPLOAD_ARTIFACT == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: apk
-          path: build/app/outputs/flutter-apk/*.apk
-          retention-days: 1
-
   build_windows:
     permissions: write-all
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -133,6 +42,20 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: 'stable'
           cache: true
+
+      - name: Install Windows Build Tools
+        run: |
+          choco install visualstudio2022-workload-vctools -y
+          choco install cmake ninja -y
+
+      - name: Install flutter_distributor
+        run: flutter pub global activate flutter_distributor
+
+      - name: Add Pub Cache to PATH
+        run: |
+          $pubCachePath = "$env:USERPROFILE\AppData\Local\Pub\Cache\bin"
+          echo "$pubCachePath" >> $env:GITHUB_PATH
+        shell: pwsh
 
       - name: Install Dependencies
         run: |
@@ -150,110 +73,20 @@ jobs:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         run: |
           make windows-release
-  
-      - name: Copy to out Windows
+
+      - name: Package Windows Output
         run: |
           tree
           .\\scripts\\package_windows.ps1
-          
+
+      - name: Debug Windows Output
+        run: |
+          tree out /F
+
       - name: Upload Windows Artifact
         if: env.UPLOAD_ARTIFACT == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: windows
-          path: ./out
-          retention-days: 1
-
-  build_macos:
-    permissions: write-all
-    runs-on: macos-13
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2.16.0
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: 'stable'
-          cache: true
-
-      - name: Setup dependencies
-        run: |
-          make macos-install-dependencies
-
-      - name: Prepare for macOS
-        run: |
-          make macos-prepare
-          tree
-
-      - name: Build macOS
-        run: |
-          make macos-release
-
-      - name: Copy to out macOS
-        run: |
-          mkdir out
-          mv dist/*/*.dmg out/${TARGET_NAME_dmg}.dmg
-          mv dist/*/*.pkg out/${TARGET_NAME_pkg}.pkg
-
-      - name: Upload macOS Artifact
-        if: env.UPLOAD_ARTIFACT == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: macOS
-          path: ./out
-          retention-days: 1
-
-  build_ios:
-    permissions: write-all
-    runs-on: macos-12
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-  
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2.16.0
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: 'stable'
-          cache: true
-  
-      - name: Clean Flutter Build
-        run: |
-          flutter clean
-  
-      - name: Get Flutter Packages
-        run: |
-          flutter pub get
-  
-      - name: Reinstall iOS Dependencies
-        run: |
-          cd ios
-          rm -rf Pods Podfile.lock
-          pod install
-          
-      - name: Install tree
-        run: brew install tree
-
-      - name: Prepare for iOS
-        run: |
-          make ios-prepare
-          tree
-  
-      - name: Build iOS (No Code Sign)
-        run: |
-          flutter build ipa --no-codesign
-  
-      - name: Copy to out iOS
-        run: |
-          mkdir out
-          mv build/ios/ipa/*.ipa out/${TARGET_NAME_ipa}.ipa
-  
-      - name: Upload iOS Artifact
-        if: env.UPLOAD_ARTIFACT == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: iOS
           path: ./out
           retention-days: 1
