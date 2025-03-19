@@ -74,15 +74,10 @@ jobs:
         run: |
           make windows-release
 
-      - name: Package Windows Output
+      - name: Copy to out Windows
         run: |
           tree
           .\\scripts\\package_windows.ps1
-
-      - name: Debug Windows Output
-        run: |
-          tree out /F
-
       - name: Upload Windows Artifact
         if: env.UPLOAD_ARTIFACT == 'true'
         uses: actions/upload-artifact@v4
