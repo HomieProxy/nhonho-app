@@ -1,420 +1,607 @@
 {
   "general": {
-    "appTitle": "Hiddify",
-    "reset": "Sıfırla",
-    "toggle": {
-      "enabled": "Etkin",
-      "disabled": "Devre dışı"
-    },
-    "state": {
-      "disable": "Devre dışı bırak"
-    },
-    "sort": "Sırala",
-    "sortBy": "Sırala",
-    "addToClipboard": "Panoya ekle",
-    "notSet": "Ayarlanmadı",
-    "agree": "Kabul etmek",
-    "decline": "Reddetmek",
-    "unknown": "Bilinmeyen",
-    "hidden": "Gizlenmiş",
-    "timeout": "Zaman aşımı",
-    "clipboardExportSuccessMsg": "Panoya Eklendi",
-    "showMore": "Daha fazla göster",
-    "showLess": "Daha az göster",
-    "openAppSettings": "Uygulama Ayarlarını Aç",
-    "grantPermission": "İzin Ver"
+      "appTitle": "Homiefroxy",
+      "reset": "កំណត់ឡើងវិញ",
+      "toggle": {
+          "enabled": "បើក",
+          "disabled": "បិទ"
+      },
+      "state": {
+          "disable": "បិទ"
+      },
+      "sort": "តម្រៀប",
+      "sortBy": "របៀបតម្រៀប",
+      "addToClipboard": "បន្ថែមទៅគម្របតុបតែង",
+      "notSet": "មិនបានកំណត់",
+      "agree": "យល់ព្រម",
+      "decline": "បដិសេធ",
+      "unknown": "អត្រានេះមិនស្គាល់",
+      "hidden": "លាក់",
+      "timeout": "ពេលវេលាអស់",
+      "clipboardExportSuccessMsg": "បាននាំចេញទៅគម្របតុបតែង",
+      "showMore": "បង្ហាញបន្ថែម",
+      "showLess": "បង្ហាញតិចតួច",
+      "openAppSettings": "បើកការកំណត់កម្មវិធី",
+      "grantPermission": "ផ្តល់អនុសាសន៍"
   },
   "intro": {
-    "termsAndPolicyCaution(rich)": "devam ederek ${tap(@:about.termsAndConditions)} kabul etmiş olursunuz",
-    "start": "Başla"
+      "termsAndPolicyCaution(rich)": "បន្តប្រើប្រាស់បង្ហាញថាអ្នកយល់ព្រម ${tap(@:about.termsAndConditions)}",
+      "start": "ចាប់ផ្តើម"
+  },
+  "domain": {
+      "checkPassed": "ការត្រួតពិនិត្យបានជោគជ័យ",
+      "connectionFailed": "ការតភ្ជាប់បរាជ័យ",
+      "retryAttempts": "ចំនួនការជួសជុល"
   },
   "home": {
-    "pageTitle": "Ana Sayfa",
-    "emptyProfilesMsg": "Aboneliği profili ekleyerek başlayın",
-    "noActiveProfileMsg": "Profil seçin"
+      "pageTitle": "ទំព័រដើម",
+      "emptyProfilesMsg": "ចាប់ផ្តើមពីការបន្ថែមប្រវត្តិការជាវ",
+      "noActiveProfileMsg": "ជ្រើសរើសប្រវត្តិការជាវ",
+      "noSubscriptionMsg": "គណនីបច្ចុប្បន្នមិនមានការជាវដែលអាចប្រើបានទេ សូមទៅទំព័រជាវផែនការនេះដើម្បីទិញការជាវនិងប្រើប្រាស់",
+      "goToPurchasePage": "ទៅទំព័រទិញផែនការ"
+  },
+  "purchase": {
+      "pageTitle": "ផែនការ",
+      "noAccessToken": "មិនមានសញ្ញាដាក់ស្គាល់ សូមចូលឡើងវិញ",
+      "fetchPlansError": "បរាជ័យក្នុងការទាញយក: ",
+      "noPlans": "មិនមានផែនការដែលអាចប្រើបាន",
+      "priceLabel": "តម្លៃ: $",
+      "rmb": "USD",
+      "subscribeSuccess": "ជាវបានជោគជ័យ",
+      "addSubscriptionError": "មានបញ្ហាក្នុងការបន្ថែមការជាវ: ",
+      "subscriptionAdded": "បានបន្ថែមការជាវដោយជោគជ័យ និងកំណត់ជាប្រវត្តិការជាវសកម្ម!",
+      "noSubscriptionLink": "មិនអាចទទួលបានតំណភ្ជាប់ការជាវ",
+      "goToLogin": "សូមចូលឡើងវិញ",
+      "subscriptionDuration": "សូមជ្រើសរើសរយៈពេលជាវ",
+      "monthPrice": "តម្លៃប្រចាំខែ",
+      "quarterPrice": "តម្លៃប្រចាំត្រីមាស",
+      "halfYearPrice": "តម្លៃប្រចាំខែទីមួយ",
+      "yearPrice": "តម្លៃប្រចាំឆ្នាំ",
+      "twoYearPrice": "តម្លៃប្រចាំពីរឆ្នាំ",
+      "threeYearPrice": "តម្លៃប្រចាំបីឆ្នាំ",
+      "onetimePrice": "តម្លៃបង់ម្តងទេ",
+      "orderSuccess": "ការទូទាត់បញ្ជារបានជោគជ័យ",
+      "total": "តម្លៃផែនការ",
+      "walletDeduction": "កាត់ប្រាក់ពីកាបូប",
+      "amountToPay": "ចំនួនប្រាក់ត្រូវបង់",
+      "payNowFree": "បង់ឥឡូវនេះ (ឥតគិតថ្លៃ)",
+      "handlingFee": "ថ្លៃសេវាកម្ម",
+      "totalPrice": "តម្លៃសរុប",
+      "fee": "ថ្លៃសេវាកម្ម",
+      "selectPaymentMethod": "ជ្រើសរើសវិធីទូទាត់",
+      "unknown": "អត្រានេះមិនស្គាល់",
+      "noData": "គ្មានទិន្នន័យ",
+      "close": "បិទ",
+      "subscribe": "ជាវ",
+      "selectPrice": "សូមជ្រើសរើសតម្លៃ"
+  },
+  "payments": {
+      "noPayments": "មិនមានវិធីទូទាត់ដែលអាចប្រើបានទេ",
+      "noSuchPlan": "មិនមានការជាវដែលបានជ្រើសរើស"
+  },
+  "order": {
+      "title": "ការគ្រប់គ្រងបញ្ជារ",
+      "statuses": {
+          "unpaid": "មិនទាន់បង់",
+          "paid": "បានបង់រួច",
+          "cancelled": "បានបោះបង់",
+          "unknown": "ស្ថានភាពមិនស្គាល់"
+      },
+      "noOrders": "មិនមានបញ្ជារបច្ចុប្បន្ន",
+      "orderNumberCopied": "លេខបញ្ជារបានចម្លង",
+      "orderDetails": {
+          "orderNumber": "លេខបញ្ជារ",
+          "amount": "ចំនួនប្រាក់",
+          "paymentCycle": "រយៈពេលទូទាត់",
+          "orderStatus": "ស្ថានភាពបញ្ជារ",
+          "orderTime": "ម៉ោងបញ្ជារ"
+      },
+      "actions": {
+          "pay": "បង់ប្រាក់",
+          "cancel": "បោះបង់"
+      },
+      "messages": {
+          "orderCancelSuccess": "ការបោះបង់បញ្ជារបានជោគជ័យ",
+          "orderCancelFailed": "ការបោះបង់បញ្ជារបានបរាជ័យ"
+      }
+  },
+  "userInfo": {
+      "pageTitle": "ព័ត៌មានអ្នកប្រើ",
+      "balance": "សមតុល្យ",
+      "onlyForConsumption": "សម្រាប់ប្រើប្រាស់ប៉ុណ្ណោះ",
+      "commissionBalance": "សមតុល្យប្រាក់កម្រៃ",
+      "currency": "USD",
+      "transferEnable": "ទិន្នន័យចរាចរណ៍",
+      "plan": "ផែនការ",
+      "expiredAt": "ពេលវេលាផុតកំណត់",
+      "lastLogin": "ចូលរួចបន្ទាប់",
+      "noData": "គ្មានទិន្នន័យដែលអាចប្រើបាន",
+      "noAccessToken": "មិនមានសញ្ញាដាក់ស្គាល់។",
+      "fetchUserInfoError": "បរាជ័យក្នុងការទាញយកព័ត៌មានអ្នកប្រើ៖",
+      "resetSubscription": "កំណត់ឡើងវិញការជាវ",
+      "subscriptionResetSuccess": "តំណភ្ជាប់ការជាវបានកំណត់ឡើងវិញដោយជោគជ័យ និងធ្វើបច្ចុប្បន្នភាព។",
+      "subscriptionResetError": "បរាជ័យក្នុងការកំណត់ឡើងវិញការជាវ៖",
+      "noSubscriptionLink": "មិនមានតំណភ្ជាប់ការជាវ។",
+      "accountStatus": "ស្ថានភាពគណនី",
+      "banned": "បានហាមឃាត់",
+      "active": "សកម្ម",
+      "subscriptionUpdateError": "បច្ចុប្បន្នភាពការជាវបរាជ័យ",
+      "subscriptionUpdateSuccess": "បច្ចុប្បន្នភាពការជាវបានជោគជ័យ"
+  },
+  "inviteCode": {
+      "inviteCodeListTitle": "បញ្ជីកូដអញ្ជើញ",
+      "fetchInviteCodesError": "បរាជ័យក្នុងការទាញយកកូដអញ្ជើញ៖",
+      "noInviteCodes": "គ្មានកូដអញ្ជើញដែលអាចប្រើបាន",
+      "copyToClipboard": "ចម្លងទៅគម្របតុបតែង",
+      "copiedInviteCode": "បានចម្លងកូដអញ្ជើញ៖",
+      "generateInviteCode": "បង្កើតកូដអញ្ជើញ",
+      "inviteCodeGenerateError": "បង្កើតកូដអញ្ជើញបរាជ័យ"
+  },
+  "transferDialog": {
+      "transferTitle": "ប្ដូរមូលបត្រគាំទ្រទៅសមតុល្យ",
+      "transferHint": "សមតុល្យបន្ទាប់ពីប្ដូរ ត្រូវបានប្រើសម្រាប់ប្រើប្រាស់ប៉ុណ្ណោះ។",
+      "currentBalance": "សមតុល្យបច្ចុប្បន្នសម្រាប់បញ្ចូលប្រើប្រាស់",
+      "transferAmount": "ចំនួនប្រាក់ប្ដូរ",
+      "transferSuccess": "ការប្ដូរបានជោគជ័យ!",
+      "transferError": "ការប្ដូរបរាជ័យ",
+      "withdrawTitle": "ដកប្រាក់គាំទ្រដើម្បីប្រើប្រាស់",
+      "withdrawHint": "សូមបញ្ចូលចំនួនប្រាក់ដែលចង់ដក។",
+      "withdrawAmount": "ចំនួនប្រាក់ដក",
+      "withdrawSuccess": "ការដកប្រាក់បានជោគជ័យ!",
+      "withdrawError": "ការដកប្រាក់បរាជ័យ",
+      "transfer": "ប្ដូរ",
+      "withdraw": "ដកប្រាក់"
+  },
+  "ensure": {
+      "confirm": "បញ្ជាក់",
+      "cancel": "បោះបង់"
+  },
+  "logout": {
+      "buttonText": "ចាកចេញ",
+      "confirmationMessage": "តើអ្នកពិតជាចង់ចាកចេញពីគណនីបច្ចុប្បន្នទេ?",
+      "cancelButton": "បោះបង់",
+      "confirmButton": "ចាកចេញ"
+  },
+  "login": {
+      "welcome": "សូមស្វាគមន៍មកកាន់ការប្រើប្រាស់",
+      "username": "ឈ្មោះអ្នកប្រើ",
+      "password": "ពាក្យសម្ងាត់",
+      "loginButton": "ចូល",
+      "forgotPassword": "ភ្លេចពាក្យសម្ងាត់",
+      "register": "ចុះបញ្ជី",
+      "rememberMe": "ចងចាំគណនី និងពាក្យសម្ងាត់",
+      "loginErr": "ការចូលបរាជ័យ"
+  },
+  "forgetPassword": {
+      "pageTitle": "ភ្លេចពាក្យសម្ងាត់",
+      "email": "អ៊ីមែល",
+      "newPassword": "ពាក្យសម្ងាត់ថ្មី",
+      "verificationCode": "កូដបញ្ជាក់",
+      "sendCode": "ផ្ញើកូដបញ្ជាក់",
+      "resetPassword": "កំណត់ឡើងវិញពាក្យសម្ងាត់",
+      "emailEmptyError": "សូមបញ្ចូលអ៊ីមែលរបស់អ្នក",
+      "passwordEmptyError": "សូមបញ្ចូលពាក្យសម្ងាត់ថ្មី",
+      "verificationCodeEmptyError": "សូមបញ្ចូលកូដបញ្ជាក់",
+      "codeSentSuccess": "កូដបញ្ជាក់បានផ្ញើទៅកាន់",
+      "resetSuccess": "ពាក្យសម្ងាត់បានកំណត់ឡើងវិញជោគជ័យ",
+      "errorOccurred": "កំហុសបានកើតឡើង៖",
+      "emailSendError": "បរាជ័យក្នុងការផ្ញើកូដបញ្ជាក់។",
+      "passwordResetError": "បរាជ័យក្នុងការកំណត់ឡើងវិញពាក្យសម្ងាត់។"
+  },
+  "register": {
+      "pageTitle": "ចុះបញ្ជី",
+      "email": "អ៊ីមែល",
+      "password": "ពាក្យសម្ងាត់",
+      "inviteCode": "កូដអញ្ជើញ (អាចជ្រើសរើស)",
+      "verificationCode": "កូដបញ្ជាក់",
+      "sendCode": "ផ្ញើកូដបញ្ជាក់",
+      "register": "ចុះបញ្ជី",
+      "emailEmptyError": "សូមបញ្ចូលអ៊ីមែលរបស់អ្នក",
+      "passwordEmptyError": "សូមបញ្ចូលពាក្យសម្ងាត់របស់អ្នក",
+      "verificationCodeEmptyError": "សូមបញ្ចូលកូដបញ្ជាក់",
+      "registrationSuccess": "ចុះបញ្ជីបានជោគជ័យ",
+      "errorOccurred": "កំហុសបានកើតឡើង៖",
+      "codeSentSuccess": "កូដបញ្ជាក់បានផ្ញើទៅកាន់"
   },
   "stats": {
-    "traffic": "Trafik",
-    "trafficLive": "Canlı Trafik",
-    "trafficTotal": "Toplam Trafik",
-    "uplink": "Çıkış Yolu",
-    "downlink": "Giriş Yolu",
-    "connection": "Bağlantı",
-    "speed": "Hız",
-    "totalTransferred": "Toplam Aktarılan"
+      "traffic": "ចរាចរណ៍",
+      "trafficLive": "ចរាចរណ៍实时",
+      "trafficTotal": "ចរាចរណ៍សរុប",
+      "uplink": "បញ្ចូនខ្ពស់",
+      "downlink": "បញ្ចូនទាប",
+      "connection": "ការតភ្ជាប់",
+      "speed": "ល្បឿន",
+      "totalTransferred": "បញ្ជូនសរុប"
   },
   "profile": {
-    "overviewPageTitle": "Profiller",
-    "detailsPageTitle": "Profil",
-    "activeProfileNameSemanticLabel": "Aktif profil adı: \"${name}\".",
-    "activeProfileBtnSemanticLabel": "Tüm profilleri görüntüleyin",
-    "nonActiveProfileBtnSemanticLabel": "Aktif profil olarak \"${name}\" seçeneğini seçin.",
-    "subscription": {
-      "traffic": "Trafik",
-      "updatedTimeAgo": "${timeago} güncellendi",
-      "remainingDuration": "${duration} Gün Kaldı",
-      "remainingTrafficSemanticLabel": "${consumed}/${total} trafik tüketildi",
-      "expired": "Süresi Doldu",
-      "noTraffic": "Kotal Doldu",
-      "upload": "Yüklemek",
-      "download": "İndirmek",
-      "total": "Toplam Trafik",
-      "expireDate": "Son kullanma tarihi"
-    },
-    "sortBy": {
-      "lastUpdate": "Yakın zamanda güncellendi",
-      "name": "Alfabetik"
-    },
-    "add": {
-      "buttonText": "Yeni profil",
-      "shortBtnTxt": "Yeni profil",
-      "fromClipboard": "Panodan Ekle",
-      "scanQr": "QR kodunu tarayın",
-      "qrScanner": {
-        "permissionDeniedError": "İzin reddedildi",
-        "unexpectedError": "Bir şeyler yanlış gitti",
-        "torchSemanticLabel": "El feneri",
-        "facingSemanticLabel": "Kameraya önü",
-        "permissionRequest": "QR Kodunu taramak için kamera izni"
+      "overviewPageTitle": "ប្រវត្តិការជាវ",
+      "detailsPageTitle": "ព័ត៌មានពេញលេញ",
+      "activeProfileNameSemanticLabel": "ឈ្មោះប្រវត្តិការជាវសកម្ម៖ \"${name}\"។",
+      "activeProfileBtnSemanticLabel": "មើលប្រវត្តិការជាវទាំងអស់",
+      "nonActiveProfileBtnSemanticLabel": "ជ្រើសរើស \"${name}\" ដើម្បីកំណត់ជាប្រវត្តិការជាវសកម្ម",
+      "subscription": {
+          "traffic": "ចរាចរណ៍",
+          "updatedTimeAgo": "បានធ្វើបច្ចុប្បន្នភាព ${timeago}",
+          "remainingDuration": "រយៈពេលដែលនៅសល់ ${duration} ថ្ងៃ",
+          "remainingTrafficSemanticLabel": "បានប្រើប្រាស់ ${consumed} ចរាចរណ៍ ចំនួនសរុប ${total} ចរាចរណ៍។",
+          "expired": "បានផុតកំណត់",
+          "noTraffic": "លើសកំណត់",
+          "upload": "បញ្ចូន",
+          "download": "ទាញយក",
+          "total": "ចរាចរណ៍សរុប",
+          "expireDate": "ថ្ងៃផុតកំណត់"
       },
-      "manually": "Manuel giriş",
-      "addWarp": "WARP ekle",
-      "addingWarpMsg": "WARP'ı kaydederken lütfen bekleyin.",
-      "addingProfileMsg": "Profil Ekleniyor",
-      "failureMsg": "Profil eklenemedi"
-    },
-    "update": {
-      "buttonTxt": "Güncelle",
-      "tooltip": "Profili Güncelle",
-      "updateSubscriptions": "Abonelikleri Güncelle",
-      "failureMsg": "Profil güncellenemedi",
-      "successMsg": "Profil başarıyla güncellendi",
-      "namedFailureMsg": "\"${name}\" güncellenemedi",
-      "namedSuccessMsg": "\"${name}\" başarıyla güncellendi"
-    },
-    "share": {
-      "buttonText": "Paylaş",
-      "exportToClipboardSuccess": "Panoya aktarıldı",
-      "exportSubLinkToClipboard": "Abonelik bağlantısını panoya aktar",
-      "subLinkQrCode": "QR kodun abonelik bağlantısı ",
-      "exportConfigToClipboard": "Yapılandırmayı panoya aktar",
-      "exportConfigToClipboardSuccess": "Yapılandırma panoya kopyalandı"
-    },
-    "edit": {
-      "buttonTxt": "Düzenle",
-      "selectActiveTxt": "Etkin profili seçin"
-    },
-    "delete": {
-      "buttonTxt": "Sil",
-      "confirmationMsg": "Profil kalıcı olarak silinsin mi?",
-      "successMsg": "Profil başarıyla silindi"
-    },
-    "save": {
-      "buttonText": "Kaydet",
-      "successMsg": "Profil başarıyla kaydedildi",
-      "failureMsg": "Profil kaydedilemedi"
-    },
-    "detailsForm": {
-      "nameLabel": "İsim",
-      "nameHint": "Profil ismi",
-      "urlLabel": "URL",
-      "urlHint": "Tam yapılandırma URL'i",
-      "emptyNameMsg": "İsim gerekli",
-      "invalidUrlMsg": "Geçersiz URL",
-      "lastUpdate": "Son Güncelleme",
-      "updateInterval": "Otomatik güncelleme",
-      "updateIntervalDialogTitle": "Otomatik Güncelleme Aralığı (saat olarak)"
-    }
+      "sortBy": {
+          "lastUpdate": "បច្ចុប្បន្នភាពថ្មីបំផុត",
+          "name": "តម្រៀបដោយអក្សរជាដើម"
+      },
+      "add": {
+          "buttonText": "ប្រវត្តិការជាវថ្មី",
+          "shortBtnTxt": "ប្រវត្តិការជាវថ្មី",
+          "fromClipboard": "បន្ថែមពីគម្របតុបតែង",
+          "scanQr": "ស្កេន QR កូដ",
+          "qrScanner": {
+              "permissionDeniedError": "អនុសាសន៍មិនគ្រប់គ្រាន់",
+              "unexpectedError": "មានបញ្ហាកើតឡើង",
+              "torchSemanticLabel": "ភ្លើងបង្វិល",
+              "facingSemanticLabel": "ប្ដូរកាមេរ៉ា",
+              "permissionRequest": "ផ្តល់អនុសាសន៍សម្រាប់កាមេរ៉ា ដើម្បីអនុញ្ញាតឲ្យស្កេន QR កូដ"
+          },
+          "manually": "បញ្ចូលដោយដៃ",
+          "addWarp": "បន្ថែម WARP",
+          "addingWarpMsg": "យើងកំពុងចុះបញ្ជី WARP សូមរង់ចាំបន្ត។",
+          "addingProfileMsg": "កំពុងបន្ថែមប្រវត្តិការជាវ",
+          "failureMsg": "បរាជ័យក្នុងការបន្ថែមប្រវត្តិការជាវ"
+      },
+      "update": {
+          "buttonTxt": "ធ្វើបច្ចុប្បន្នភាព",
+          "tooltip": "ធ្វើបច្ចុប្បន្នភាពប្រវត្តិការជាវ",
+          "updateSubscriptions": "ធ្វើបច្ចុប្បន្នភាពការជាវ",
+          "failureMsg": "បរាជ័យក្នុងការធ្វើបច្ចុប្បន្នភាពប្រវត្តិការជាវ",
+          "successMsg": "បច្ចុប្បន្នភាពប្រវត្តិការជាវបានជោគជ័យ",
+          "namedFailureMsg": "មិនអាចធ្វើបច្ចុប្បន្នភាព \"${name}\" បានទេ",
+          "namedSuccessMsg": "\"${name}\" បានធ្វើបច្ចុប្បន្នភាពជោគជ័យ"
+      },
+      "share": {
+          "buttonText": "ចែករំលែក",
+          "exportToClipboardSuccess": "បាននាំចេញទៅគម្របតុបតែង",
+          "exportSubLinkToClipboard": "នាំចេញតំណភ្ជាប់ការជាវទៅគម្របតុបតែង",
+          "subLinkQrCode": "QR កូដតំណភ្ជាប់ការជាវ",
+          "exportConfigToClipboard": "នាំចេញការកំណត់ទៅគម្របតុបតែង",
+          "exportConfigToClipboardSuccess": "ការកំណត់បានចម្លងទៅគម្របតុបតែង"
+      },
+      "edit": {
+          "buttonTxt": "កែសម្រួល",
+          "selectActiveTxt": "ជ្រើសរើស និងកំណត់ជាប្រវត្តិការជាវសកម្ម"
+      },
+      "delete": {
+          "buttonTxt": "លុប",
+          "confirmationMsg": "តើអ្នកពិតជាចង់លុបប្រវត្តិការជាវនេះជាពុំលែងជាអសកម្មទេ?",
+          "successMsg": "ប្រវត្តិការជាវបានលុបដោយជោគជ័យ"
+      },
+      "save": {
+          "buttonText": "រក្សាទុក",
+          "successMsg": "ប្រវត្តិការជាវបានរក្សាទុកដោយជោគជ័យ",
+          "failureMsg": "ការរក្សាទុកប្រវត្តិការជាវបរាជ័យ"
+      },
+      "detailsForm": {
+          "nameLabel": "ឈ្មោះ",
+          "nameHint": "ឈ្មោះប្រវត្តិការជាវ",
+          "urlLabel": "URL",
+          "urlHint": "URL គំរូពេញលេញ",
+          "emptyNameMsg": "ឈ្មោះគឺជាផ្នែកទាមទារដោយប្រក្រតី",
+          "invalidUrlMsg": "URL មិនត្រឹមត្រូវ",
+          "lastUpdate": "ការបច្ចុប្បន្នភាពចុងក្រោយ",
+          "updateInterval": "ការបច្ចុប្បន្នភាពស្វ័យប្រវត្តិ",
+          "updateIntervalDialogTitle": "ចន្លោះពេលបច្ចុប្បន្នភាព (ម៉ោង)"
+      }
   },
   "proxies": {
-    "pageTitle": "Proxyler",
-    "emptyProxiesMsg": "Kullanılabilir proxy yok",
-    "delayTestTooltip": "Test Gecikmesi",
-    "sortTooltip": "Proxy'leri Sırala",
-    "checkIp": "IP'yi kontrol edin",
-    "unknownIp": "Bilinmeyen IP",
-    "sortOptions": {
-      "unsorted": "Varsayılan",
-      "name": "Alfabetik olarak",
-      "delay": "Gecikmeyle"
-    },
-    "activeProxySemanticLabel": "Aktif Vekil",
-    "delaySemantics": {
-      "result": "Gecikme: ${delay}ms",
-      "timeout": "Gecikme Testi Zaman Aşımı",
-      "testing": "Gecikme: Test ediliyor..."
-    },
-    "ipInfoSemantics": {
-      "address": "IP adresi",
-      "country": "Ülke"
-    }
+      "pageTitle": "ភ្នាក់ងារ",
+      "emptyProxiesMsg": "គ្មានភ្នាក់ងារដែលអាចប្រើបាន",
+      "delayTestTooltip": "សាកល្បងពន្យាពេល",
+      "sortTooltip": "តម្រៀបភ្នាក់ងារ",
+      "checkIp": "ពិនិត្យអាសយដ្ឋាន IP",
+      "unknownIp": "IP មិនស្គាល់",
+      "sortOptions": {
+          "unsorted": "លំនាំដើម",
+          "name": "តម្រៀបតាមអក្សរ",
+          "delay": "តម្រៀបតាមពេលពន្យាពេល"
+      },
+      "activeProxySemanticLabel": "ភ្នាក់ងាសកម្ម",
+      "delaySemantics": {
+          "result": "ពន្យាពេល: ${delay}ms",
+          "timeout": "ពេលពន្យាពេលសាកល្បងអស់",
+          "testing": "កំពុងសាកល្បងពន្យាពេល"
+      },
+      "ipInfoSemantics": {
+          "address": "អាសយដ្ឋាន IP",
+          "country": "ប្រទេស"
+      }
   },
   "logs": {
-    "pageTitle": "Log",
-    "filterHint": "Filtre",
-    "allLevelsFilter": "Tüm",
-    "shareCoreLogs": "Çekirdek Loglarını Paylaş",
-    "shareAppLogs": "Uygulama Loglarını paylaş",
-    "pauseTooltip": "Duraklat",
-    "resumeTooltip": "Devam et",
-    "clearTooltip": "Temizle"
+      "pageTitle": "កំណត់ហេតុ",
+      "filterHint": "ត្រង",
+      "allLevelsFilter": "ទាំងអស់",
+      "shareCoreLogs": "ចែករំលែកកំណត់ហេតុស្ដង់ដារ",
+      "shareAppLogs": "ចែករំលែកកំណត់ហេតុកម្មវិធី",
+      "pauseTooltip": "បញ្ឈប់",
+      "resumeTooltip": "បន្ត",
+      "clearTooltip": "សម្អាត"
   },
   "settings": {
-    "pageTitle": "Ayarlar",
-    "requiresRestartMsg": "Bunun etkili olması için uygulamayı yeniden başlatın",
-    "experimental": "Deneysel",
-    "experimentalMsg": "Deneysel işaretli özellikler hâlâ geliştirilme aşamasındadır ve sorunlara neden olabilir.",
-    "exportOptions": "Anonim Seçenekleri Panoya Kopyala",
-    "exportAllOptions": "Tüm Seçenekleri Panoya Kopyala",
-    "importOptions": "Seçenekleri Panodan İçe Aktarma",
-    "importOptionsMsg": "Bu, tüm yapılandırma seçeneklerini sağlanan değerlerle yeniden yazacaktır. Emin misin?",
-    "general": {
-      "sectionTitle": "Genel",
-      "locale": "Dil",
-      "region": "Bölge",
-      "regionMsg": "Yerel adresleri atlamak için varsayılan seçeneği seçebilirsin",
-      "regions": {
-        "ir": "İran (ir) 🇮🇷",
-        "cn": "Çin (cn) 🇨🇳",
-        "ru": "Rusya (ru) 🇷🇺",
-        "af": "Afghanistan (af) 🇦🇫",
-        "id": "Endonezya (id) 🇮🇩",
-        "tr": "Türk (tr) 🇹🇷",
-        "other": "Diğer"
+      "pageTitle": "ការកំណត់",
+      "requiresRestartMsg": "ដើម្បីអនុវត្តការកំណត់នេះ សូមបិទនិងបើកកម្មវិធីឡើងវិញ",
+      "experimental": "ជម្រើសសាកល្បង",
+      "experimentalMsg": "មុខងារដែលមានសញ្ញាសាកល្បងកំពុងស្រាវជ្រាវ ហើយអាចនឹងបង្កើតបញ្ហាផ្សេងៗបាន។",
+      "exportOptions": "នាំចេញជម្រើសអនាមិកទៅគម្របតុបតែង",
+      "exportAllOptions": "នាំចេញជម្រើសទាំងអស់ទៅគម្របតុបតែង (សម្រាប់ការពិនិត្យសូមប្រើ)",
+      "importOptions": "នាំចូលជម្រើសពីគម្របតុបតែង",
+      "importOptionsMsg": "ការនេះនឹងប្រើតម្លៃដែលផ្តល់សម្រាប់ការបញ្ចូលជម្រើសទាំងអស់។ តើអ្នកពិតជាចង់បន្តមែនទេ?",
+      "general": {
+          "sectionTitle": "ជម្រើសទូទៅ",
+          "locale": "ភាសា",
+          "region": "តំបន់",
+          "regionMsg": "ជួយកំណត់ជម្រើសលំនាំដើមដើម្បីជួសជុលសំរាប់អាសយដ្ឋានក្នុងប្រទេស",
+          "regions": {
+              "ir": "អ៊ីរ៉ង់ (ir)",
+              "cn": "ចិន (cn)",
+              "ru": "រុស្ស៊ី (ru)",
+              "af": "អាហ្វហ្កានីស្ថាន (af)",
+              "id": "ឥណ្ឌូនេស៊ី (id)",
+              "tr": "តួកគី (tr) 🇹🇷",
+              "br": "ប្រេស៊ីល (br) 🇧🇷",
+              "other": "ផ្សេងទៀត"
+          },
+          "themeMode": "ម៉ូដប្រើប្រាស់",
+          "themeModes": {
+              "system": "តាមម៉ូដប្រព័ន្ធ",
+              "dark": "ម៉ូដងងឹត",
+              "light": "ម៉ូដពន្លឺ",
+              "black": "ម៉ូដខ្មៅ"
+          },
+          "enableAnalytics": "បើកការវិភាគ",
+          "enableAnalyticsMsg": "ផ្តល់សិទ្ធិចំពោះការប្រមូលការវិភាគនិងផ្ញើរប្រព្រឹត្តការប្រហែលសំរាប់ការអភិវឌ្ឍកម្មវិធី",
+          "autoStart": "ចាប់ផ្តើមជាមួយម៉ាស៊ីន",
+          "silentStart": "ចាប់ផ្តើមដោយហើយបិទសំឡេង",
+          "openWorkingDir": "បើកថតការងារ",
+          "ignoreBatteryOptimizations": "បិទការបង្កើតការប្រសិទ្ធភាពថ្ម",
+          "ignoreBatteryOptimizationsMsg": "បិទកំណត់ដើម្បីទទួលបានការសម្រួល VPN នៅល្អបំផុត",
+          "dynamicNotification": "បង្ហាញល្បឿនបណ្ដាញនៅក្នុងសេចក្ដីជូនដំណឹង",
+          "hapticFeedback": "មតិយោបល់កម្តៅ",
+          "autoIpCheck": "ពិនិត្យស្វ័យប្រវត្តិ IP ដែលបានភ្ជាប់",
+          "actionAtClosing": "Action at closing",
+          "actionsAtClosing": {
+              "askEachTime": "សួររាល់ពេល",
+              "hide": "លាក់ខ្លួន",
+              "exit": "ចាកចេញ"
+          }
       },
-      "themeMode": "Tema Modu",
-      "themeModes": {
-        "system": "Sistem temasını takip et",
-        "dark": "Karanlık mod",
-        "light": "Işık modu",
-        "black": "Siyah mod"
+      "advanced": {
+          "sectionTitle": "ជម្រើសមុខជំរុញ",
+          "debugMode": "ម៉ូដបញ្ជាក់កំហុស",
+          "debugModeMsg": "បិទនិងបើកកម្មវិធីឡើងវិញដើម្បីអនុវត្តការកំណត់នេះ",
+          "memoryLimit": "កំណត់ការចងចាំ",
+          "memoryLimitMsg": "បើអ្នកប្រឈមមុខនឹងកំហុសការចងចាំតិចឬកម្មវិធីបិទជាប់ៗ សូមបើកជម្រើសនេះ",
+          "resetTunnel": "កំណត់ឡើងវិញកំណត់ VPN"
       },
-      "enableAnalytics": "Analitikleri Etkinleştir",
-      "enableAnalyticsMsg": "Uygulamayı iyileştirmek için analiz toplama ve kilitlenme raporları göndermeye izni verin",
-      "autoStart": "Önyüklemede Başlat",
-      "silentStart": "Sessiz Başlatma",
-      "openWorkingDir": "Çalışma Dizinini Aç",
-      "ignoreBatteryOptimizations": "Pil Optimizasyonunu Devre Dışı Bırak",
-      "ignoreBatteryOptimizationsMsg": "Optimum VPN performansı için kısıtlamaları kaldırın",
-      "dynamicNotification": "Bildirimde hızı göster",
-      "hapticFeedback": "Dokunsal geribildirim",
-      "autoIpCheck": "Bağlantı IP'sini Otomatik Olarak Kontrol Et"
-    },
-    "advanced": {
-      "sectionTitle": "Gelişmiş",
-      "debugMode": "Hata ayıklama modu",
-      "debugModeMsg": "Bu değişikliği uygulamak için uygulamayı yeniden başlatın",
-      "memoryLimit": "Bellek Sınırı",
-      "memoryLimitMsg": "Yetersiz bellek hataları veya sık sık uygulama çökmesi yaşıyorsanız etkinleştirin",
-      "resetTunnel": "VPN Profilini Sıfırla"
-    },
-    "network": {
-      "perAppProxyPageTitle": "Uygulama başına Proxy",
-      "perAppProxyModes": {
-        "off": "Tümü",
-        "offMsg": "Proxy tüm uygulamalar",
-        "include": "Proxy",
-        "includeMsg": "Yalnızca proxy seçilen uygulamalar",
-        "exclude": "Atlatma",
-        "excludeMsg": "Seçilen uygulamalara proxy uygulama"
+      "network": {
+          "perAppProxyPageTitle": "ប្រូកស៊ីពីកម្មវិធី",
+          "perAppProxyModes": {
+              "off": "ទាំងអស់",
+              "offMsg": "ប្រូកស៊ីទាំងអស់",
+              "include": "ប្រូកស៊ី",
+              "includeMsg": "ប្រូកស៊ីញឹកនាំប្រើប្រាស់",
+              "exclude": "វាង",
+              "excludeMsg": "កុំប្រូកស៊ីកម្មវិធីដែលបានជ្រើសរើស"
+          },
+          "showSystemApps": "បង្ហាញកម្មវិធីប្រព័ន្ធ",
+          "hideSystemApps": "លាក់កម្មវិធីប្រព័ន្ធ",
+          "clearSelection": "សម្អាតជម្រើស"
       },
-      "showSystemApps": "Sistem uygulamalarını göster",
-      "hideSystemApps": "Sistem uygulamalarını gizle",
-      "clearSelection": "Seçimi temizle"
-    },
-    "geoAssets": {
-      "pageTitle": "Varlıkları Yönlendirme",
-      "geoip": "GeoIP",
-      "geosite": "Geosite",
-      "version": "Sürüm ${version}",
-      "fileMissing": "Eksik dosya",
-      "update": "Güncelleme",
-      "download": "İndirmek",
-      "failureMsg": "Öğe güncellenemedi",
-      "successMsg": "Öğe başarıyla güncellendi",
-      "addRecommended": "Önerilen Varlıkları Ekle",
-      "missingGeoAssetsMsg": "Seçilen yönlendirme varlıklarının dosyaları eksik. Bunları indirin veya mevcut olanları seçin."
-    }
+      "geoAssets": {
+          "pageTitle": "ឯកសារចំណុចផ្លូវ",
+          "geoip": "GeoIP",
+          "geosite": "Geosite",
+          "version": "ជំនាន់ ${version}",
+          "fileMissing": "ឯកសារបាត់បង់",
+          "update": "ធ្វើបច្ចុប្បន្នភាព",
+          "download": "ទាញយក",
+          "failureMsg": "បរាជ័យក្នុងការធ្វើបច្ចុប្បន្នភាពឯកសារ",
+          "successMsg": "ធ្វើបច្ចុប្បន្នភាពឯកសារតាមកំណត់បានជោគជ័យ",
+          "addRecommended": "បន្ថែមឯកសារបង្ហាញផ្សេងៗ",
+          "missingGeoAssetsMsg": "ឯកសារចំណុចផ្លូវដែលបានជ្រើសរើសត្រូវបានបាត់បង់។ សូមទាញយកឯកសារនេះឬជ្រើសរើសឯកសារដែលមាន"
+      }
   },
   "about": {
-    "pageTitle": "Hakkında",
-    "version": "Sürüm",
-    "sourceCode": "Kaynak kodu",
-    "telegramChannel": "Telegram Kanalı",
-    "checkForUpdate": "Güncellemeleri kontrol et",
-    "privacyPolicy": "Gizlilik Politikası",
-    "termsAndConditions": "Şartlar ve koşullar"
+      "pageTitle": "អំពី",
+      "version": "ជំនាន់",
+      "sourceCode": "កូដប្រភព",
+      "telegramChannel": "ឆាណែល Telegram",
+      "checkForUpdate": "ពិនិត្យសម្រាប់បច្ចុប្បន្នភាព",
+      "privacyPolicy": "គោលការណ៍ភាពឯកជន",
+      "termsAndConditions": "ល័ក្ខខ័ណ្ឌ"
   },
   "appUpdate": {
-    "notAvailableMsg": " En son sürümü kullanıyorsunuz",
-    "dialogTitle": "Yeni Güncell",
-    "updateMsg": "@:general.appTitle'ın yeni bir sürümü mevcut. Şimdi güncellemek ister misiniz?",
-    "currentVersionLbl": "Şimdiki versiyon",
-    "newVersionLbl": "Yeni versiyon",
-    "updateNowBtnTxt": "Şimdi güncelle",
-    "laterBtnTxt": "Daha sonra",
-    "ignoreBtnTxt": "Görmezden gel"
+      "notAvailableMsg": "ជំនាន់ចុងក្រោយ",
+      "dialogTitle": "មានបច្ចុប្បន្នភាពដែលអាចប្រើបាន",
+      "updateMsg": "@:general.appTitle មានជំនាន់ថ្មីប្រើបាន។ តើអ្នកចង់ធ្វើបច្ចុប្បន្នភាពឥឡូវនេះទេ?",
+      "currentVersionLbl": "ជំនាន់បច្ចុប្បន្ន",
+      "newVersionLbl": "ជំនាន់ថ្មី",
+      "updateNowBtnTxt": "ធ្វើបច្ចុប្បន្នភាពឥឡូវនេះ",
+      "laterBtnTxt": "បន្តក្រោយ",
+      "ignoreBtnTxt": "មិនចង់"
   },
   "tray": {
-    "dashboard": "Gösterge Paneli",
-    "quit": "Çıkış yap",
-    "open": "Açık",
-    "status": {
-      "connect": "Bağlan",
-      "connecting": "Bağlanıyor",
-      "disconnect": "Bağlantıyı kes",
-      "disconnecting": "Bağlantı kesiliyor"
-    }
+      "dashboard": "ផ្ទាំងការពិនិត្យ",
+      "quit": "ចាកចេញ",
+      "open": "បើក",
+      "status": {
+          "connect": "តភ្ជាប់",
+          "connecting": "កំពុងតភ្ជាប់",
+          "disconnect": "បញ្ឈប់តភ្ជាប់",
+          "disconnecting": "កំពុងបញ្ឈប់តភ្ជាប់"
+      }
   },
   "failure": {
-    "unexpected": "Beklenmeyen hata",
-    "clash": {
-      "unexpected": "Beklenmeyen hata",
-      "core": "Çakışma Hatası ${reason}"
-    },
-    "singbox": {
-      "unexpected": "Beklenmedik Hizmet Hatası",
-      "serviceNotRunning": "Servis çalışmıyor",
-      "missingPrivilege": "Eksik Ayrıcalık",
-      "missingPrivilegeMsg": "VPN modu yönetici ayrıcalıkları gerektirir. Uygulamayı yönetici olarak yeniden başlatın veya hizmet modunu değiştirin.",
-      "missingGeoAssets": "Eksik Coğrafi Varlıklar",
-      "missingGeoAssetsMsg": "Coğrafi öğeler eksik. Aktif varlığı değiştirmeyi veya ayarlarda seçileni indirmeyi düşünün.",
-      "invalidConfigOptions": "Geçersiz yapılandırma seçenekleri",
-      "invalidConfig": "Geçersiz Yapılandırma",
-      "create": "Servis oluşturma hatası",
-      "start": "Servis başlatma hatası"
-    },
-    "connectivity": {
-      "unexpected": "Beklenmedik Hata",
-      "missingVpnPermission": "Eksik VPN İzni",
-      "missingNotificationPermission": "Eksik Bildirim İzni",
-      "core": "Temel Hata"
-    },
-    "profiles": {
-      "unexpected": "Beklenmedik hata",
-      "notFound": "Profil bulunamadı",
-      "invalidConfig": "Geçersiz Yapılandırmalar",
-      "invalidUrl": "Geçersiz URL"
-    },
-    "connection": {
-      "unexpected": "Beklenmeyen bağlantı hatası",
-      "timeout": "Bağlantı zamanaşımına uğradı",
-      "badResponse": "Kötü yanıt",
-      "connectionError": "Bağlantı hatası",
-      "badCertificate": "Kötü sertifika"
-    },
-    "geoAssets": {
-      "unexpected": "Beklenmeyen hata",
-      "notUpdate": "Güncelleme mevcut değil",
-      "activeNotFound": "Etkin Coğrafi Varlık Bulunamadı"
-    }
+      "unexpected": "កំហុសមិនគ្រប់គ្រាន់",
+      "clash": {
+          "unexpected": "កំហុសមិនគ្រប់គ្រាន់",
+          "core": "កំហុស Clash ${reason}"
+      },
+      "singbox": {
+          "unexpected": "កំហុសសេវាកម្មមិនគ្រប់គ្រាន់",
+          "serviceNotRunning": "សេវាកម្មមិនកំពុងរត់",
+          "missingPrivilege": "ខ្វះសិទ្ធិ",
+          "missingPrivilegeMsg": "ម៉ូដ VPN ត្រូវការសិទ្ធិរដ្ឋបាល។ សូមបើកកម្មវិធីឡើងវិញឬផ្លាស់ប្ដូរម៉ូដសេវាកម្ម",
+          "missingGeoAssets": "ខ្វះឯកសារ GEO",
+          "missingGeoAssetsMsg": "ខ្វះឯកសារ GEO។ សូមពិចារណាប្តូរឯកសារ GEO ឬទាញយកឯកសារដែលបានជ្រើសនៅក្នុងការកំណត់។",
+          "invalidConfigOptions": "ជម្រើសកំណត់មិនត្រឹមត្រូវ",
+          "invalidConfig": "កំណត់មិនត្រឹមត្រូវ",
+          "create": "កំហុសក្នុងការបង្កើតសេវាកម្ម",
+          "start": "កំហុសក្នុងការចាប់ផ្តើមសេវាកម្ម"
+      },
+      "connectivity": {
+          "unexpected": "ការបរាជ័យមិនគ្រប់គ្រាន់",
+          "missingVpnPermission": "ខ្វះសិទ្ធិ VPN",
+          "missingNotificationPermission": "ខ្វះសិទ្ធិជូនដំណឹង",
+          "core": "កំហុសគោលការណ៍"
+      },
+      "profiles": {
+          "unexpected": "កំហុសមិនគ្រប់គ្រាន់",
+          "notFound": "មិនមានប្រវត្តិការជាវ",
+          "invalidConfig": "កំណត់មិនត្រឹមត្រូវ",
+          "invalidUrl": "URL មិនត្រឹមត្រូវ"
+      },
+      "connection": {
+          "unexpected": "កំហុសក្នុងការតភ្ជាប់",
+          "timeout": "ពេលវេលាតភ្ជាប់អស់",
+          "badResponse": "ឆ្លើយតបខុស",
+          "connectionError": "កំហុសក្នុងការតភ្ជាប់",
+          "badCertificate": "វិញ្ញាបនបត្រមិនត្រឹមត្រូវ"
+      },
+      "geoAssets": {
+          "unexpected": "កំហុសមិនគ្រប់គ្រាន់",
+          "notUpdate": "មិនមានបច្ចុប្បន្នភាពដែលអាចប្រើបាន",
+          "activeNotFound": "មិនមានឯកសារ GEO សកម្ម"
+      }
   },
   "play": {
-    "title": "Hiddify (Önizleme)",
-    "short_description": "Otomatik, SSH, VLESS, Vmess, Trojan, Reality, Sing-Box, Clash, Xray, Shadowsocks",
-    "full_description": "Hiddify'in temel hedefi güvenli, kullanıcı dostu ve verimli bir tünel istemcisi sağlamaktır. VPN Hizmeti iznini kullanarak tüm trafiği veya seçilen uygulama trafiğini seçtiğiniz uzak bir sunucuya yönlendirmenizi sağlar. Not: Herhangi bir sunucu sağlamıyoruz; kullanıcıların kendi barındırılan sunucularını veya güvenilir sunucularını kullanarak çevrimiçi etkinliklerinin gizli kalmasını sağlamaları gerekir. Sunucuları aşağıdakilerle destekliyoruz: - Normal V2ray/Xray Abonelik Bağlantısı - Clash Abonelik Bağlantısı - Sing-Box Abonelik Bağlantısı Benzersiz özelliklerimiz nelerdir? - Kullanıcı Dostu - Optimize Edilmiş ve Hızlı - En Düşük Ping'i otomatik olarak seçin - Kullanıcı kullanım bilgilerini gösterin - Derin bağlantı kullanarak tek tıklamayla alt bağlantıyı kolayca içe aktarın - Ücretsiz ve ADS Yok - Kullanıcı alt bağlantılarını kolayca değiştirin - giderek daha fazla Destek: - Sing-Box tarafından desteklenen tüm Protokoller - VLESS + xtls gerçeklik, vizyon - VMESS - Trojan - ShoadowSocks - Reality - V2ray - Hystria2 - TUIC - SSH - ShadowTLS Kaynak kodu https://github.com/hiddify/Hiddify-Next adresinde mevcuttur. Uygulama çekirdeği açık tabanlıdır. kaynak şarkı kutusu. İzin Açıklaması: - VPN Hizmeti: Bu uygulamanın amacı güvenli, kullanıcı dostu ve verimli bir tünel istemcisi sağlamak olduğundan, trafiği tünel aracılığıyla uzak sunucuya yönlendirebilmek için bu izne ihtiyacımız var. - TÜM PAKETLERİ SORGULAYIN: Bu izin, kullanıcıların tünelleme için belirli uygulamaları dahil etmesine veya hariç tutmasına izin vermek için kullanılır. - ALMA ÖNYÜKLEME TAMAMLANDI: Bu izin, cihaz önyüklemesi sırasında bu uygulamayı etkinleştirmek için uygulama ayarlarından etkinleştirilebilir veya devre dışı bırakılabilir. - BİLDİRİMLER SONRASI: VPN hizmetinin sürekli çalışmasını sağlamak için bir ön plan hizmeti kullandığımız için bu izin önemlidir. - Bu uygulama reklam içermez. Analitik ve kilitlenme verileri yalnızca uygulamanın ilk kullanımında kullanıcının açık rızası ile gerçekleşir."
+      "title": "Homiefroxy (ការបង្ហាញ)",
+      "short_description": "អូតូ, SSH, VLESS, Vmess, Trojan, Reality, Sing-Box, Clash, Xray, Shadowsocks",
+      "full_description": "គោលបំណងសំខាន់របស់ Homiefroxy គឺផ្តល់នូវកម្មវិធីបណ្ដាញសុវត្ថិភាព, មិត្តភាពប្រើប្រាស់ និងមានប្រសិទ្ធភាព។ វាអនុញ្ញាតឱ្យអ្នកប្រើប្រាស់សេវាកម្ម VPN ដើម្បីបញ្ជូនចរាចរណ៍ទាំងអស់ ឬចរាចរណ៍កម្មវិធីជ្រើសទៅកាន់ម៉ាស៊ីនបម្រើដែលអ្នកជ្រើស។\n\nសម្គាល់៖ យើងមិនផ្តល់សេវាកម្មម៉ាស៊ីនបម្រើទេ; អ្នកប្រើប្រាស់ត្រូវតែប្រើម៉ាស៊ីនបម្រើដែលមាននៅខ្លួនឯង ឬម៉ាស៊ីនបម្រើដែលគេឲ្យជឿទុកចិត្តដើម្បីធានាថាសកម្មភាពអនឡាញរបស់អ្នកមានភាពឯកជន។\n\nយើងគាំទ្រប្រភេទម៉ាស៊ីនបម្រើដូចខាងក្រោម៖\n- តំណភ្ជាប់V2ray/Xray ទូទៅ\n- តំណភ្ជាប់ Clash\n- តំណភ្ជាប់ Sing-Box\n\nអ្វីទៅជាពិសេសនៅក្នុងគេហទំព័ររបស់យើង?\n\n- មិត្តភាពប្រើប្រាស់\n- ប្រាក់ដកហូត និងល្បឿនល្អ\n- ជ្រើសរើសពេលពន្យាពេលតិចបំផុតដោយស្វ័យប្រវត្តិ\n- បង្ហាញព័ត៌មានការប្រើប្រាស់អ្នកប្រើ\n- នាំចូលដោយឆ្លើយតបតែមួយ\n- ឥតគិតថ្លៃ និងគ្មានពាណិជ្ជកម្ម\n- ប្ដូរឆ្លងបន្ទាត់យ៉ាងងាយស្រួល\n- អចិន្ត្រៃយ៍\n\nគាំទ្រ៖\n- មុខងារទាំងអស់ដែលគាំទ្រដោយ Sing-Box\n- VLESS + XTLS Reality, Vision ប្រព័ន្ធ\n- VMESS\n- Trojan\n- ShadowSocks\n- Reality\n- WireGuard\n- V2ray\n- Hystria2\n- TUIC\n- SSH\n- ShadowTLS\n\n\nកូដប្រភពស្ថិតនៅ https://github.com/Homiefroxy/Homiefroxy-Next\nគោលការណ៍បណ្តាញមាននៅលើកម្មវិធី Sing-Box សំរាប់កម្មវិធី។\n\nការពន្យល់អំពីសិទ្ធិ៖\n\n- សេវាកម្ម VPN: ពីព្រោះគោលបំណងនៃកម្មវិធីនេះគឺផ្តល់នូវកម្មវិធីបណ្ដាញសុវត្ថិភាព, មិត្តភាពប្រើប្រាស់ និងមានប្រសិទ្ធភាព។ យើងត្រូវការសិទ្ធិនេះដើម្បីអាចបញ្ជូនចរាចរណ៍ទៅម៉ាស៊ីនបម្រើអនឡាញ។\nការទទួលបានបញ្ជីកម្មវិធី: សិទ្ធិនេះអនុញ្ញាតឲ្យអ្នកប្រើរាប់បញ្ចូលឬដកកម្មវិធីដែលចង់ដំណើរការដោយភ្នាក់ងារ។\n- ទទួលបានសេចក្ដីផ្សាយការចាប់ផ្តើម: អាចបើកឬបិទសិទ្ធិនេះពីការកំណត់កម្មវិធី ដើម្បីឲ្យកម្មវិធីដំណើរការប្រព័ន្ធនាពេលប្រើប្រាស់។\n- ស្នើសុំការជូនដំណឹង: សិទ្ធិនេះគឺពិបាកចាំបាច់ ពីព្រោះយើងប្រើសេវាកម្មមុខងារកម្រងការដំណើរការខាងមុខដើម្បីធានាថាសេវាកម្ម VPN មិនមានការលំបាក។\n- កម្មវិធីនេះគ្មានពាណិជ្ជកម្ម។ ការវិភាគនិងការប្រមូលព័ត៌មានត្រូវបានធ្វើនៅពេលអ្នកប្រើប្រាស់កម្មវិធីមុនពេលចូលដំណើរការ។"
   },
   "connection": {
-    "tapToConnect": "Bağlanmak için dokunun",
-    "connecting": "Bağlanıyor",
-    "disconnecting": "Bağlantı kesiliyor",
-    "connected": "Bağlandı",
-    "reconnect": "Yeniden bağlan",
-    "connectAnyWay": "Bağlamak",
-    "experimentalNotice": "Kullanımdaki Deneysel Özellikler",
-    "experimentalNoticeMsg": "Bağlantı kalitesini etkileyebilecek ve beklenmeyen hatalara neden olabilecek bazı deneysel özellikleri etkinleştirdiniz. Bu seçenekleri istediğiniz zaman Yapılandırma seçenekleri sayfasından değiştirebilir veya sıfırlayabilirsiniz.",
-    "disableExperimentalNotice": "Bir daha gösterme",
-    "reconnectMsg": "Değişiklikleri dikkate almak için yeniden bağlanılıyor..."
+      "tapToConnect": "ចុចដើម្បីតភ្ជាប់",
+      "connecting": "កំពុងតភ្ជាប់",
+      "disconnecting": "កំពុងបញ្ឈប់ការតភ្ជាប់",
+      "connected": "តភ្ជាប់រួច",
+      "reconnect": "ភ្ជាប់ឡើងវិញ",
+      "connectAnyWay": "តភ្ជាប់",
+      "experimentalNotice": "មុខងារសាកល្បងកំពុងប្រើ",
+      "experimentalNoticeMsg": "អ្នកបានបើកមុខងារសាកល្បងខ្លះៗ ដែលអាចប៉ះពាល់ដល់គុណភាពការតភ្ជាប់និងបណ្តាលអោយកើតកំហុស។ អ្នកអាចប្ដូរឬកំណត់ឡើងវិញជម្រើសទាំងនេះពីទំព័រកំណត់។",
+      "disableExperimentalNotice": "បញ្ឈប់ការបង្ហាញ",
+      "reconnectMsg": "ភ្ជាប់ឡើងវិញដើម្បីអនុវត្តការប្តូរ"
   },
   "config": {
-    "resetBtn": "Ayarları sıfırla",
-    "serviceMode": "Servis modu",
-    "quickSettings": "Hızlı Ayarlar",
-    "setupWarp": "WARP'ı Kur",
-    "allOptions": "Tüm Yapılandırma Seçenekleri",
-    "serviceModes": {
-      "proxy": "Proxy",
-      "systemProxy": "Sistem Proxy",
-      "tun": "VPN",
-      "tunService": "VPN Hizmeti"
-    },
-    "shortServiceModes": {
-      "proxy": "vekil",
-      "systemProxy": "Sistem Proxy'si",
-      "tun": "VPN",
-      "tunService": "VPN Hizmeti"
-    },
-    "section": {
-      "route": "Rota Seçenekleri",
-      "dns": "DNS Seçenekleri",
-      "inbound": "Gelen Seçenekler",
-      "mux": "Multiplexer",
-      "outbound": "Outbound Options",
-      "tlsTricks": "TLS Tricks",
-      "warp": "WARP Options",
-      "misc": "Çeşitli Seçenekler"
-    },
-    "warpConsent": {
-      "title": "Cloudflare WARP Onayı",
-      "description(rich)": "Cloudflare WARP ücretsiz bir WireGuard VPN sağlayıcısıdır. Bu seçeneği etkinleştirerek Cloudflare WARP'ın ${tos(Hizmet Şartları)} ve ${privacy(Gizlilik Politikası)}'nı kabul etmiş olursunuz."
-    },
-    "generateWarpConfig": "WARP Yapılandırması Oluştur",
-    "missingWarpConfig": "WARP Yapılandırması Eksik",
-    "warpConfigGenerated": "WARP Yapılandırması Oluşturuldu",
-    "pageTitle": "Yapılandırma Seçenekleri",
-    "logLevel": "Log Seviyesi",
-    "blockAds": "Reklamları Engelle",
-    "resolveDestination": "Hedefi Çöz",
-    "ipv6Mode": "IPv6 Rotası",
-    "ipv6Modes": {
-      "disable": "Devre dışı bırak",
-      "enable": "Etkinleştir",
-      "prefer": "Tercih edilen",
-      "only": "Özel"
-    },
-    "remoteDnsAddress": "Uzak DNS",
-    "remoteDnsDomainStrategy": "Uzak DNS Domain Stratejisi",
-    "directDnsAddress": "Doğrudan DNS",
-    "directDnsDomainStrategy": "Doğrudan DNS Domain Stratejisi",
-    "mixedPort": "Mixed Port",
-    "tproxyPort": "Şeffaf Proxy Bağlantı Noktası",
-    "localDnsPort": "Yerel DNS Bağlantı Noktası",
-    "allowConnectionFromLan": "Allow Connection from LAN",
-    "tunImplementation": "TUN İmplementasyonu",
-    "mtu": "Paket Boyutu (MTU)",
-    "connectionTestUrl": "Bağlantı Testi URL'i",
-    "urlTestInterval": "URL Test Aralığı",
-    "enableClashApi": "Clash API'yi etkinleştir",
-    "clashApiPort": "Clash API Bağlantı Noktası",
-    "enableTun": "TUN'u etkinleştir",
-    "setSystemProxy": "Sistem Proxy'sini Ayarla",
-    "enableDnsRouting": "Enable DNS Routing",
-    "enableFakeDns": "Sahte DNS'yi Etkinleştir",
-    "bypassLan": "Lan'ı Atla",
-    "strictRoute": "Kesin Rota",
-    "enableTlsFragment": "Enable TLS Fragment",
-    "tlsFragmentSize": "TLS Fragment Size",
-    "tlsFragmentSleep": "TLS Fragment Sleep",
-    "enableTlsMixedSniCase": "Enable TLS Mixed SNI Case",
-    "enableTlsPadding": "Enable TLS Padding",
-    "tlsPaddingSize": "TLS Padding",
-    "enableMux": "Enable Mux",
-    "muxProtocol": "Mux Protocol",
-    "muxMaxStreams": "Max Concurrent Streams",
-    "enableWarp": "Enable WARP",
-    "warpDetourMode": "Detour Mode",
-    "warpDetourModes": {
-      "proxyOverWarp": "WARP Aracılığıyla Proxy'lerin Yönünü Değiştirin",
-      "warpOverProxy": "Proxy'ler Aracılığıyla WARP'tan Sapma",
-      "inbound": "Detour WARP through proxies",
-      "outbound": "Detour proxies through WARP"
-    },
-    "warpLicenseKey": "License Key",
-    "warpCleanIp": "Clean IP",
-    "warpPort": "Port",
-    "warpNoise": "Noise",
-    "warpNoiseSize": "Gürültü Boyutu",
-    "warpNoiseMode": "Gürültü Modu",
-    "warpNoiseDelay": "Gürültü Gecikmesi"
+      "useXrayCoreWhenPossible": {
+          "Label": "ប្រើ Xray-core នៅពេលអាចធ្វើទៅបាន",
+          "Description": "ប្រើ Xray-core នៅពេលដែលបកស្រាយតំណរផ្សេង។ អ្នកត្រូវការបញ្ចូលតំណរផ្សេងឡើងវិញដើម្បីបើកជម្រើសនេះ។"
+      },
+      "resetBtn": "កំណត់ឡើងវិញជម្រើស",
+      "serviceMode": "ម៉ូដសេវាកម្ម",
+      "quickSettings": "ការកំណត់លឿន",
+      "setupWarp": "កំណត់ WARP",
+      "allOptions": "ជម្រើសទាំងអស់",
+      "serviceModes": {
+          "proxy": "ភ្នាក់ងារតែប៉ុណ្ណោះ",
+          "systemProxy": "ភ្នាក់ងារប្រព័ន្ធ",
+          "tun": "VPN",
+          "tunService": "សេវាកម្ម VPN"
+      },
+      "shortServiceModes": {
+          "proxy": "ភ្នាក់ងារតែប៉ុណ្ណោះ",
+          "systemProxy": "ភ្នាក់ងារប្រព័ន្ធ",
+          "tun": "VPN",
+          "tunService": "សេវាកម្ម VPN"
+      },
+      "section": {
+          "route": "ជម្រើសផ្លូវ",
+          "dns": "ជម្រើស DNS",
+          "inbound": "ជម្រើសចូល",
+          "mux": "Multiplexing",
+          "outbound": "ជម្រើសចេញ",
+          "tlsTricks": "លក្ខណៈ TLS",
+          "warp": "ជម្រើស WARP",
+          "misc": "ជម្រើសផ្សេងទៀត"
+      },
+      "warpConsent": {
+          "title": "ល័ក្ខខ័ណ្ឌបញ្ចុះបញ្ចូល Cloudflare WARP",
+          "description(rich)": "Cloudflare WARP គឺជាសេវាកម្ម VPN WireGuard ឥតគិតថ្លៃ។ ការបើកជម្រើសនេះមានន័យថាអ្នកយល់ព្រមនឹង ${tos(ល័ក្ខខ័ណ្ឌសេវាកម្ម)} និង ${privacy(គោលការណ៍ភាពឯកជន)} នៃ Cloudflare WARP"
+      },
+      "generateWarpConfig": "បង្កើតការកំណត់ WARP",
+      "missingWarpConfig": "ការកំណត់ WARP ខ្វះ",
+      "warpConfigGenerated": "ការកំណត់ WARP បានបង្កើតរួចរាល់",
+      "pageTitle": "ជម្រើសកំណត់",
+      "logLevel": "កម្រិតកំណត់ហេតុ",
+      "blockAds": "បបោសផ្សាយពាណិជ្ជកម្ម",
+      "resolveDestination": "បកស្រាយអាសយដ្ឋានគោលដៅ",
+      "ipv6Mode": "ម៉ូដ IPv6",
+      "ipv6Modes": {
+          "disable": "បិទ",
+          "enable": "បើក",
+          "prefer": "ជ្រើសរើស",
+          "only": "តែ IPv6"
+      },
+      "remoteDnsAddress": "អាសយដ្ឋាន DNS ចម្ងាយ",
+      "remoteDnsDomainStrategy": "យុទ្ធសាស្ត្រដomaine DNS ចម្ងាយ",
+      "directDnsAddress": "អាសយដ្ឋាន DNS ត្រូវតាមផ្លូវ",
+      "directDnsDomainStrategy": "យុទ្ធសាស្ត្រដomaine DNS ត្រូវតាមផ្លូវ",
+      "mixedPort": "ច្របូកច្របល់ច្រក",
+      "tproxyPort": "ច្រកភ្នាក់ងារត្រួតពិនិត្យ",
+      "localDnsPort": "ច្រក DNS នៅតំបន់",
+      "allowConnectionFromLan": "អនុញ្ញាតឱ្យតភ្ជាប់ពី LAN",
+      "tunImplementation": "អនុវត្តន៍ TUN",
+      "mtu": "ទំហំកញ្ចប់ (MTU)",
+      "connectionTestUrl": "តំណតេស្តការតភ្ជាប់",
+      "urlTestInterval": "ចន្លោះពេលតេស្តតំណ",
+      "enableClashApi": "បើក Clash API",
+      "clashApiPort": "ច្រក Clash API",
+      "enableTun": "បើក TUN",
+      "setSystemProxy": "កំណត់ភ្នាក់ងារប្រព័ន្ធ",
+      "enableDnsRouting": "បើកការបញ្ជូន DNS",
+      "enableFakeDns": "បើក Fake DNS",
+      "bypassLan": "បញ្ចេញ LAN",
+      "strictRoute": "ផ្លូវតឹងរឹង",
+      "enableTlsFragment": "បើកការបំបែកទិន្នន័យ TLS",
+      "tlsFragmentSize": "ទំហំបំបែក TLS",
+      "tlsFragmentSleep": "ដោត TLS បំបែក",
+      "enableTlsMixedSniCase": "បើកករណី SNI TLS បញ្ជីសង្គមច្របូក",
+      "enableTlsPadding": "បើកការបន្ថែម TLS",
+      "tlsPaddingSize": "ទំហំការបន្ថែម TLS",
+      "enableMux": "បើក Mux Multiplexing",
+      "muxProtocol": "ប្រព័ន្ធ Mux",
+      "muxMaxStreams": "ចំនួនការបញ្ចូនខ្ពស់ Mux",
+      "enableWarp": "បើក WARP",
+      "warpDetourMode": "ម៉ូដភ្ជាប់ប្រកប",
+      "warpDetourModes": {
+          "proxyOverWarp": "តភ្ជាប់ភ្នាក់ងារដោយ WARP",
+          "warpOverProxy": "តភ្ជាប់ WARP ដោយភ្នាក់ងារ",
+          "inbound": "តាមភ្នាក់ងារបង្ហោះ WARP",
+          "outbound": "តាម WARP បង្ហោះភ្នាក់ងារ"
+      },
+      "warpLicenseKey": "កូដសិទ្ធិការប្រើប្រាស់",
+      "warpCleanIp": "សម្អាត IP",
+      "warpPort": "ច្រក WARP",
+      "warpNoise": "ចំនួនសំឡេង",
+      "warpNoiseSize": "ទំហំសំឡេង",
+      "warpNoiseMode": "ម៉ូដសំឡេង",
+      "warpNoiseDelay": "ពេលពន្យាពេលសំឡេង"
+  },
+  "window": {
+      "hide": "លាក់",
+      "close": "បិទ",
+      "alertMessage": "តើអ្នកចង់លាក់ឬចាកចេញពីកម្មវិធី?",
+      "remember": "ចងចាំជម្រើសរបស់ខ្ញុំ"
   }
 }

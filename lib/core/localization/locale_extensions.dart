@@ -14,7 +14,7 @@ extension AppLocaleX on AppLocale {
         "ru" => "Русский",
         "zh" || "zh_CN" => "中文 (中国)",
         "zh_TW" => "中文 (台湾)",
-        "tr" => "Türkçe",
+        "tr" => "ភាសាខ្មែរ",
         "es" => "Spanish",
         "id" => "Indonesian",
         "hi" => "हिन्दी",

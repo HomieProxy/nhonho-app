@@ -1,6 +1,6 @@
 {
     "general": {
-        "appTitle": "Hiddify",
+        "appTitle": "Homiefroxy",
         "reset": "重置",
         "toggle": {
             "enabled": "启用",
@@ -45,8 +45,8 @@
         "noAccessToken": "未找到访问令牌，请重新登录。",
         "fetchPlansError": "加载失败: ",
         "noPlans": "没有可用的套餐",
-        "priceLabel": "价格: ¥",
-        "rmb": "元",
+        "priceLabel": "价格: $",
+        "rmb": "USD",
         "subscribeSuccess": "成功订阅",
         "addSubscriptionError": "添加订阅时发生错误: ",
         "subscriptionAdded": "成功添加订阅并设置为活动配置文件！",
@@ -110,7 +110,7 @@
         "balance": "余额",
         "onlyForConsumption": "仅消费用",
         "commissionBalance": "剩余佣金",
-        "currency": "元",
+        "currency": "USD",
         "transferEnable": "数据流量",
         "plan": "套餐",
         "expiredAt": "到期时间",
@@ -369,7 +369,13 @@
             "ignoreBatteryOptimizationsMsg": "消除限制以获得最佳 VPN 性能",
             "dynamicNotification": "在通知中显示网络速度",
             "hapticFeedback": "触觉反馈",
-            "autoIpCheck": "自动检查连接的 IP"
+            "autoIpCheck": "自动检查连接的 IP",
+            "actionAtClosing": "Action at closing",
+            "actionsAtClosing": {
+                "askEachTime": "每次都询问",
+                "hide": "隐藏",
+                "exit": "退出"
+            }
         },
         "advanced": {
             "sectionTitle": "高级选项",
@@ -481,9 +487,9 @@
         }
     },
     "play": {
-        "title": "Hiddify（预览）",
+        "title": "Homiefroxy（预览）",
         "short_description": "自动，SSH, VLESS, Vmess, Trojan, Reality, Sing-Box, Clash, Xray, Shadowsocks",
-        "full_description": "Hiddify 的主要目标是提供安全、用户友好且高效的隧道客户端。它使您能够利用 VPN 服务权限将所有流量或选定的应用程序流量路由到您选择的远程服务器。\n\n注：我们不提供任何服务器；用户需要使用自己托管的服务器或可信的服务器来确保您在线活动的私密性。\n \n我们支持以下类型的服务器：\n- 普通 V2ray/Xray 订阅链接\n- Clash 订阅链接\n- Sing-Box 订阅链接\n\n我们的特色是什么？\n\n- 用户友好\n- 优化和高速\n- 自动选择最低延迟\n- 显示用户使用信息\n- 通过一键链接轻松导入\n- 免费且无广告\n- 轻松切换线路\n- 等等\n\n支持：\n- Sing-Box 支持的所有协议\n- VLESS + XTLS Reality、Vision 协议\n- VMESS\n- Trojan\n- ShadowSocks\n- Reality\n- WireGuard\n- V2ray\n- Hystria2\n- TUIC\n- SSH\n- ShadowTLS\n\n\n源代码位于 https://github.com/hiddify/Hiddify-Next\n应用程序核心基于开源的 Sing-Box。\n\n权限说明：\n\n- VPN 服务：由于此应用程序的目标是提供安全、用户友好和高效的隧道客户端，我们需要此权限以能够通过隧道将流量路由到远程服务器。\n获取应用程序列表：此权限用于允许用户包括或排除特定应用程序以进行隧道传输。\n- 接收开机广播：可以从应用程序设置中启用或禁用此权限，以便在设备启动时激活此应用程序。\n- 发送通知：此权限是必需的，因为我们使用前台服务来确保 VPN 服务的持续运行。\n- 本应用程序没有广告。分析和崩溃数据仅在首次使用应用程序时经用户明确同意的情况下发生。"
+        "full_description": "Homiefroxy 的主要目标是提供安全、用户友好且高效的隧道客户端。它使您能够利用 VPN 服务权限将所有流量或选定的应用程序流量路由到您选择的远程服务器。\n\n注：我们不提供任何服务器；用户需要使用自己托管的服务器或可信的服务器来确保您在线活动的私密性。\n \n我们支持以下类型的服务器：\n- 普通 V2ray/Xray 订阅链接\n- Clash 订阅链接\n- Sing-Box 订阅链接\n\n我们的特色是什么？\n\n- 用户友好\n- 优化和高速\n- 自动选择最低延迟\n- 显示用户使用信息\n- 通过一键链接轻松导入\n- 免费且无广告\n- 轻松切换线路\n- 等等\n\n支持：\n- Sing-Box 支持的所有协议\n- VLESS + XTLS Reality、Vision 协议\n- VMESS\n- Trojan\n- ShadowSocks\n- Reality\n- WireGuard\n- V2ray\n- Hystria2\n- TUIC\n- SSH\n- ShadowTLS\n\n\n源代码位于 https://github.com/Homiefroxy/Homiefroxy-Next\n应用程序核心基于开源的 Sing-Box。\n\n权限说明：\n\n- VPN 服务：由于此应用程序的目标是提供安全、用户友好和高效的隧道客户端，我们需要此权限以能够通过隧道将流量路由到远程服务器。\n获取应用程序列表：此权限用于允许用户包括或排除特定应用程序以进行隧道传输。\n- 接收开机广播：可以从应用程序设置中启用或禁用此权限，以便在设备启动时激活此应用程序。\n- 发送通知：此权限是必需的，因为我们使用前台服务来确保 VPN 服务的持续运行。\n- 本应用程序没有广告。分析和崩溃数据仅在首次使用应用程序时经用户明确同意的情况下发生。"
     },
     "connection": {
         "tapToConnect": "点击连接",
@@ -595,6 +601,7 @@
     "window": {
         "hide": "隐藏",
         "close": "关闭",
-        "alertMessage": "隐藏或退出应用程序？"
+        "alertMessage": "隐藏或退出应用程序？",
+        "remember": "记住我的选择"
     }
 }

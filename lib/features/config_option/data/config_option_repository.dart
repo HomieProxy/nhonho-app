@@ -60,18 +60,8 @@ abstract class ConfigOptions {
 
   static final remoteDnsAddress = PreferencesNotifier.create<String, String>(
     "remote-dns-address",
-    "udp://1.1.1.1",
-    possibleValues: List.of([
-      "local",
-      "udp://223.5.5.5",
-      "udp://1.1.1.1",
-      "udp://1.1.1.2",
-      "tcp://1.1.1.1",
-      "https://1.1.1.1/dns-query",
-      "https://sky.rethinkdns.com/dns-query",
-      "4.4.2.2",
-      "8.8.8.8",
-    ]),
+    "https://1.1.1.1/dns-query",
+    possibleValues: List.of(["local", "udp://223.5.5.5", "udp://1.1.1.1", "udp://1.1.1.2", "tcp://1.1.1.1", "https://1.1.1.1/dns-query", "https://1.0.0.1/dns-query", "4.4.2.2", "8.8.8.8"]),
     validator: (value) => value.isNotBlank,
   );
 
@@ -84,19 +74,9 @@ abstract class ConfigOptions {
 
   static final directDnsAddress = PreferencesNotifier.create<String, String>(
     "direct-dns-address",
-    "udp://1.1.1.1",
-    possibleValues: List.of([
-      "local",
-      "udp://223.5.5.5",
-      "udp://1.1.1.1",
-      "udp://1.1.1.2",
-      "tcp://1.1.1.1",
-      "https://1.1.1.1/dns-query",
-      "https://sky.rethinkdns.com/dns-query",
-      "4.4.2.2",
-      "8.8.8.8",
-    ]),
-    defaultValueFunction: (ref) => ref.read(region) == Region.cn ? "223.5.5.5" : "1.1.1.1",
+    "https://223.5.5.5/dns-query",
+    possibleValues: List.of(["local", "udp://223.5.5.5", "udp://1.1.1.1", "udp://1.1.1.2", "tcp://1.1.1.1", "https://1.1.1.1/dns-query", "https://223.5.5.5/dns-query", "4.4.2.2", "8.8.8.8"]),
+    defaultValueFunction: (ref) => ref.read(region) == Region.cn ? "https://223.5.5.5/dns-query" : "https://223.5.5.5/dns-query",
     validator: (value) => value.isNotBlank,
   );
 
@@ -138,9 +118,11 @@ abstract class ConfigOptions {
 
   static final connectionTestUrl = PreferencesNotifier.create<String, String>(
     "connection-test-url",
-    "http://cp.cloudflare.com",
+    "http://www.google.com/generate_204",
     possibleValues: List.of([
       "http://connectivitycheck.gstatic.com/generate_204",
+      "http://www.google.com/generate_204",
+      "https://www.google.com/generate_204",
       "http://www.gstatic.com/generate_204",
       "https://www.gstatic.com/generate_204",
       "http://cp.cloudflare.com",

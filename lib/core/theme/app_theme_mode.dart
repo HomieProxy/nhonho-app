@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hiddify/core/localization/translations.dart';
 
 enum AppThemeMode {
-  system,
   light,
+  system,
   dark,
   black;
 

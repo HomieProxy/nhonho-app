@@ -5,13 +5,18 @@ import 'package:http/http.dart' as http;
 
 class DomainService {
   static const String ossDomain =
-      'https://storage.googleapis.com/oss-clarity/config.json';
+      'https://github.com/pandaaxi/nhonho-app/blob/main/oss.json';
 
 // 从返回的 JSON 中挑选一个可以正常访问的域名
   static Future<String> fetchValidDomain() async {
     try {
       final response = await http
-          .get(Uri.parse(ossDomain))
+          .get(
+            Uri.parse(ossDomain),
+            headers: {
+              'User-Agent': 'Homiefroxy/1.4', // Add the custom User-Agent header here
+            },
+            )
           .timeout(const Duration(seconds: 10));
       if (response.statusCode == 200) {
         final List<dynamic> websites =
@@ -44,7 +49,12 @@ class DomainService {
   static Future<bool> _checkDomainAccessibility(String domain) async {
     try {
       final response = await http
-          .get(Uri.parse('$domain/api/v1/guest/comm/config'))
+          .get(
+            Uri.parse('$domain/api/v1/guest/comm/config'),
+            headers: {
+              'User-Agent': 'Homiefroxy/1.4', // Add the custom User-Agent header here as well
+            },
+          )
           .timeout(const Duration(seconds: 15));
 
       return response.statusCode == 200;
