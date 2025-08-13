@@ -8,7 +8,7 @@ class OrderService {
 
   Future<List<Order>> fetchUserOrders(String accessToken) async {
     final result = await _httpService.getRequest(
-      "/api/v1/user/order/fetch",
+      "/globalize/v1/user/order/fetch",
       headers: {'Authorization': accessToken},
     );
 
@@ -25,7 +25,7 @@ class OrderService {
   Future<Map<String, dynamic>> getOrderDetails(
       String tradeNo, String accessToken) async {
     return await _httpService.getRequest(
-      "/api/v1/user/order/detail?trade_no=$tradeNo",
+      "/globalize/v1/user/order/detail?trade_no=$tradeNo",
       headers: {'Authorization': accessToken},
     );
   }
@@ -33,7 +33,7 @@ class OrderService {
   Future<Map<String, dynamic>> cancelOrder(
       String tradeNo, String accessToken) async {
     return await _httpService.postRequest(
-      "/api/v1/user/order/cancel",
+      "/globalize/v1/user/order/cancel",
       {"trade_no": tradeNo},
       headers: {'Authorization': accessToken},
     );
@@ -42,7 +42,7 @@ class OrderService {
   Future<Map<String, dynamic>> createOrder(
       String accessToken, int planId, String period) async {
     return await _httpService.postRequest(
-      "/api/v1/user/order/save",
+      "/globalize/v1/user/order/save",
       {"plan_id": planId, "period": period},
       headers: {'Authorization': accessToken},
     );

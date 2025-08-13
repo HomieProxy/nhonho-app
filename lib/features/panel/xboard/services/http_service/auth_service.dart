@@ -16,7 +16,7 @@ class AuthService {
 
   Future<Map<String, dynamic>> login(String email, String password) async {
     // Use the base URL from HttpService
-    final url = Uri.parse('${HttpService.baseUrl}/api/v1/passport/auth/login');
+    final url = Uri.parse('${HttpService.baseUrl}/globalize/v1/passport/auth/login');
     // Encode the body as URL-encoded form data
     final body = _encodeFormData({"email": email, "password": password});
     // Set the header to let the backend know you're sending form data
@@ -42,7 +42,7 @@ class AuthService {
   Future<Map<String, dynamic>> register(
       String email, String password, String inviteCode, String emailCode) async {
     return await _httpService.postRequest(
-      "/api/v1/passport/auth/register",
+      "/globalize/v1/passport/auth/register",
       {
         "email": email,
         "password": password,
@@ -54,7 +54,7 @@ class AuthService {
 
   Future<Map<String, dynamic>> sendVerificationCode(String email) async {
     return await _httpService.postRequest(
-      "/api/v1/passport/comm/sendEmailVerify",
+      "/globalize/v1/passport/comm/sendEmailVerify",
       {'email': email},
     );
   }
@@ -62,7 +62,7 @@ class AuthService {
   Future<Map<String, dynamic>> resetPassword(
       String email, String password, String emailCode) async {
     return await _httpService.postRequest(
-      "/api/v1/passport/auth/forget",
+      "/globalize/v1/passport/auth/forget",
       {
         "email": email,
         "password": password,

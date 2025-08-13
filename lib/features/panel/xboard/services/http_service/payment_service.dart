@@ -25,7 +25,7 @@ class PaymentService {
     }
 
     return await _httpService.postRequest(
-      "/api/v1/user/order/checkout",
+      "/globalize/v1/user/order/checkout",
       {
         "trade_no": tradeNo,
         "method": method,
@@ -38,7 +38,7 @@ class PaymentService {
   /// Retrieves available payment methods.
   Future<List<dynamic>> getPaymentMethods(String accessToken) async {
     final response = await _httpService.getRequest(
-      "/api/v1/user/order/getPaymentMethod",
+      "/globalize/v1/user/order/getPaymentMethod",
       headers: {'Authorization': accessToken},
     );
     return (response['data'] as List).cast<dynamic>();

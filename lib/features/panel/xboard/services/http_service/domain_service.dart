@@ -50,7 +50,7 @@ class DomainService {
     try {
       final response = await http
           .get(
-            Uri.parse('$domain/api/v1/guest/comm/config'),
+            Uri.parse('$domain/globalize/v1/guest/comm/config'),
             headers: {
               'User-Agent': 'Homiefroxy/1.4', // Add the custom User-Agent header here as well
             },

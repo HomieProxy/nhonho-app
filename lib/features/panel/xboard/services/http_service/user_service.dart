@@ -7,7 +7,7 @@ class UserService {
 
   Future<UserInfo?> fetchUserInfo(String accessToken) async {
     final result = await _httpService.getRequest(
-      "/api/v1/user/info",
+      "/globalize/v1/user/info",
       headers: {'Authorization': accessToken},
     );
     if (result.containsKey("data")) {
@@ -20,7 +20,7 @@ class UserService {
   Future<bool> validateToken(String token) async {
     try {
       final response = await _httpService.getRequest(
-        "/api/v1/user/getSubscribe",
+        "/globalize/v1/user/getSubscribe",
         headers: {'Authorization': token},
       );
       return response['status'] == 'success';
@@ -31,7 +31,7 @@ class UserService {
 
   Future<String?> getSubscriptionLink(String accessToken) async {
     final result = await _httpService.getRequest(
-      "/api/v1/user/getSubscribe",
+      "/globalize/v1/user/getSubscribe",
       headers: {'Authorization': accessToken},
     );
     // ignore: avoid_dynamic_calls
@@ -40,7 +40,7 @@ class UserService {
 
   Future<String?> resetSubscriptionLink(String accessToken) async {
     final result = await _httpService.getRequest(
-      "/api/v1/user/resetSecurity",
+      "/globalize/v1/user/resetSecurity",
       headers: {'Authorization': accessToken},
     );
     return result["data"] as String?;

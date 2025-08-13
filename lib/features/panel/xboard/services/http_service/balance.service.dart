@@ -9,7 +9,7 @@ class BalanceService {
     int transferAmount,
   ) async {
     await _httpService.postRequest(
-      '/api/v1/user/transfer',
+      '/globalize/v1/user/transfer',
       {'transfer_amount': transferAmount},
       headers: {'Authorization': accessToken}, // 需要用户的认证令牌
     );
