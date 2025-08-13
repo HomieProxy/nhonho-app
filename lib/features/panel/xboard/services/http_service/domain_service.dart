@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 class DomainService {
   static const String ossDomain =
-      'https://raw.githubusercontent.com/pandaaxi/nhonho-app/refs/heads/main/oss.json';
+      'https://oss01.980410.xyz/pandaoss.conf.json';
 
 // 从返回的 JSON 中挑选一个可以正常访问的域名
   static Future<String> fetchValidDomain() async {

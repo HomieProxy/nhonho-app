@@ -76,7 +76,10 @@ class ForgetPasswordPage extends ConsumerWidget {
                           onPressed: viewModel.isCountingDown
                               ? null
                               : viewModel.sendVerificationCode,
-                          child: Text(t.forgetPassword.sendCode),
+                          child: Text(
+ t.forgetPassword.sendCode,
+ style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+ ),
                         ),
                 ),
                 validator: (value) {
@@ -94,7 +97,12 @@ class ForgetPasswordPage extends ConsumerWidget {
                 child: viewModel.isLoading
                     ? const CircularProgressIndicator()
                     : Text(t.forgetPassword.resetPassword),
+ style: ElevatedButton.styleFrom(
+ backgroundColor: Theme.of(context).colorScheme.primary,
+ foregroundColor: Theme.of(context).colorScheme.onPrimary,
+ ),
               ),
+
             ],
           ),
         ),

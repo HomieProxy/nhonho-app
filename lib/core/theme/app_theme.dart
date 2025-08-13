@@ -25,6 +25,8 @@ class AppTheme {
         ColorScheme.fromSeed(
           seedColor: const Color(0xFF293CA0),
           brightness: Brightness.dark,
+ secondary: Colors.amberAccent,
+ onPrimary: Colors.white,
         );
     return ThemeData(
       useMaterial3: true,
