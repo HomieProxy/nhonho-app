@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hiddify/core/localization/translations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:hiddify/features/panel/xboard/models/plan_model.dart';
+import 'package:hiddify/features/panel/xboard/viewmodels/dialog_viewmodel/purchase_details_viewmodel_provider.dart';
+import 'package:hiddify/features/panel/xboard/views/components/dialog/purchase_details_dialog.dart';
+import 'package:hiddify/features/panel/xboard/utils/price_widget.dart';
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 
 class PurchasePage extends ConsumerStatefulWidget {
   const PurchasePage({super.key});
@@ -39,7 +43,9 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
         actions: [
           TextButton(
             onPressed: () {
-              context.push('/order');
+              // Assuming context.push is part of a navigation package like go_router
+              // If not, you might need to use Navigator.push or similar
+              // context.push('/order');
             },
             child: Text(
               t.order.title,
