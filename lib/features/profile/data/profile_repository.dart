@@ -154,8 +154,12 @@ class ProfileRepositoryImpl with ExceptionHandler, InfraLogger implements Profil
             .flatMap(
               (profile) => TaskEither(
                 () async {
+                  // Append ?flag=sing-box to the URL before saving
+                  final modifiedProfile = profile.copyWith(
+ url: '${profile.url}?flag=sing-box', // Append ?flag=sing-box to the URL
+                  );
                   await profileDataSource.insert(
-                    profile.copyWith(id: profileId, active: markAsActive).toEntry(),
+                    modifiedProfile.copyWith(id: profileId, active: markAsActive).toEntry(),
                   );
                   return right(unit);
                 },
@@ -253,13 +257,15 @@ class ProfileRepositoryImpl with ExceptionHandler, InfraLogger implements Profil
         return fetch(baseProfile.url, baseProfile.id, cancelToken: cancelToken)
             .flatMap(
               (remoteProfile) => TaskEither(() async {
+ // Append ?flag=sing-box to the URL before saving
                 await profileDataSource.insert(
                   baseProfile
                       .copyWith(
                         subInfo: remoteProfile.subInfo,
                         lastUpdate: DateTime.now(),
-                      )
-                      .toEntry(),
+ url: '${baseProfile.url}?flag=sing-box', // Modify the URL here
+ )
+ .toEntry(),
                 );
                 return right(unit);
               }),
@@ -311,8 +317,8 @@ class ProfileRepositoryImpl with ExceptionHandler, InfraLogger implements Profil
                     baseProfile.id,
                     patchBaseProfile
                         ? profilePatch.copyWith(
-                            name: Value(baseProfile.name),
-                            url: Value(baseProfile.url),
+                            name: Value(baseProfile.name), // keep original name when patching base profile
+                            url: Value('${baseProfile.url}?flag=sing-box'), // Append ?flag=sing-box to the URL when patching base profile
                             testUrl: Value(baseProfile.testUrl),
                             updateInterval: Value(baseProfile.options?.updateInterval),
                           )
