@@ -12,7 +12,6 @@ on:
       channel:
         type: string
         default: "dev"
-    workflow_dispatch:
 
 env:
   IS_GITHUB_ACTIONS: 1
