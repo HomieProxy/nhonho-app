@@ -1,12 +1,18 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hiddify/core/localization/translations.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:hiddify/features/panel/xboard/models/plan_model.dart';
-import 'package:hiddify/features/panel/xboard/viewmodels/dialog_viewmodel/purchase_details_viewmodel_provider.dart';
-import 'package:hiddify/features/panel/xboard/views/components/dialog/purchase_details_dialog.dart';
+import 'package:hiddify/features/panel/xboard/services/purchase_service.dart';
 import 'package:hiddify/features/panel/xboard/utils/price_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:hiddify/features/panel/xboard/viewmodels/purchase_viewmodel.dart';
+
+import 'package:hiddify/features/panel/xboard/views/components/dialog/purchase_details_dialog.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+final purchaseViewModelProvider = ChangeNotifierProvider(
+  (ref) => PurchaseViewModel(purchaseService: PurchaseService()),
+);
 
 class PurchasePage extends ConsumerStatefulWidget {
   const PurchasePage({super.key});
@@ -20,7 +26,7 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
   void initState() {
     super.initState();
     // Delay the provider modification until after the first frame is built
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(purchaseViewModelProvider).fetchPlans();
     });
   }
@@ -37,15 +43,12 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
           icon: const Icon(Icons.menu),
           onPressed: () {
             Scaffold.of(context).openDrawer();
-            launchUrl(Uri.parse('https://red.980410.xyz/'));
           },
         ),
         actions: [
           TextButton(
             onPressed: () {
-              // Assuming context.push is part of a navigation package like go_router
-              // If not, you might need to use Navigator.push or similar
-              // context.push('/order');
+              context.push('/order');
             },
             child: Text(
               t.order.title,
