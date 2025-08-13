@@ -1,87 +1,37 @@
-name: Build
+# This is a basic workflow to help you get started with Actions
 
+name: CI
+
+# Controls when the workflow will run
 on:
-  workflow_call:
-    inputs:
-      upload-artifact:
-        type: boolean
-        default: true
-      tag-name:
-        type: string
-        default: "draft"
-      channel:
-        type: string
-        default: "dev"
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  
+  workflow_dispatch:
 
-env:
-  IS_GITHUB_ACTIONS: 1
-  CHANNEL: "${{ inputs.channel }}"
-  FLUTTER_VERSION: '3.24.0'
-  UPLOAD_ARTIFACT: "${{ inputs.upload-artifact }}"
-  TAG_NAME: "${{ inputs.tag-name }}"
-  TARGET_NAME_apk: "Hiddify-Android"
-  TARGET_NAME_exe: "Hiddify-Windows-x64"
-  TARGET_NAME_dmg: "Hiddify-MacOS"
-  TARGET_NAME_pkg: "Hiddify-MacOS-Installer"
-  TARGET_NAME_ipa: "Hiddify-iOS"
-  TARGET_NAME_AppImage: "Hiddify-Linux-x64"
-  TARGET_NAME_deb: "Hiddify-Debian-x64"
-  TARGET_NAME_rpm: "Hiddify-rpm-x64"
+  # Allows you to run this workflow manually from the Actions tab
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build_windows:
-    permissions: write-all
-    runs-on: windows-latest
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2.16.0
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: 'stable'
-          cache: true
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
 
-      - name: Install Windows Build Tools
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
         run: |
-          choco install visualstudio2022-workload-vctools -y
-          choco install cmake ninja -y
-
-      - name: Install flutter_distributor
-        run: flutter pub global activate flutter_distributor
-
-      - name: Add Pub Cache to PATH
-        run: |
-          $pubCachePath = "$env:USERPROFILE\AppData\Local\Pub\Cache\bin"
-          echo "$pubCachePath" >> $env:GITHUB_PATH
-        shell: pwsh
-
-      - name: Install Dependencies
-        run: |
-          flutter pub get
-          dart run build_runner build --delete-conflicting-outputs
-          dart run slang
-
-      - name: Prepare for Windows
-        run: |
-          make windows-prepare
-          tree
-
-      - name: Build Windows
-        env:
-          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
-        run: |
-          make windows-release
-
-      - name: Copy to out Windows
-        run: |
-          tree
-          .\\scripts\\package_windows.ps1
-      - name: Upload Windows Artifact
-        if: env.UPLOAD_ARTIFACT == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: windows
-          path: ./out
-          retention-days: 1
+          echo Add other actions to build,
+          echo test, and deploy your project.
