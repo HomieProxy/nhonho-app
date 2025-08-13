@@ -154,12 +154,8 @@ class ProfileRepositoryImpl with ExceptionHandler, InfraLogger implements Profil
             .flatMap(
               (profile) => TaskEither(
                 () async {
-                  // Append ?flag=sing-box to the URL before saving
-                  final modifiedProfile = profile.copyWith(
- url: '${profile.url}?flag=sing-box', // Append ?flag=sing-box to the URL
-                  );
                   await profileDataSource.insert(
-                    modifiedProfile.copyWith(id: profileId, active: markAsActive).toEntry(),
+                    profile.copyWith(id: profileId, active: markAsActive).toEntry(),
                   );
                   return right(unit);
                 },
@@ -263,7 +259,6 @@ class ProfileRepositoryImpl with ExceptionHandler, InfraLogger implements Profil
                       .copyWith(
                         subInfo: remoteProfile.subInfo,
                         lastUpdate: DateTime.now(),
- url: '${baseProfile.url}?flag=sing-box', // Modify the URL here
  )
  .toEntry(),
                 );
@@ -318,8 +313,8 @@ class ProfileRepositoryImpl with ExceptionHandler, InfraLogger implements Profil
                     patchBaseProfile
                         ? profilePatch.copyWith(
                             name: Value(baseProfile.name), // keep original name when patching base profile
-                            url: Value('${baseProfile.url}?flag=sing-box'), // Append ?flag=sing-box to the URL when patching base profile
-                            testUrl: Value(baseProfile.testUrl),
+                            url: Value(baseProfile.url),
+                             testUrl: Value(baseProfile.testUrl),
                             updateInterval: Value(baseProfile.options?.updateInterval),
                           )
                         : profilePatch,
