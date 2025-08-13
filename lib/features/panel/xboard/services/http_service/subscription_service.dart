@@ -16,7 +16,7 @@ class SubscriptionService {
     if (result.containsKey("data")) {
       final data = result["data"];
       if (data is Map<String, dynamic> && data.containsKey("subscribe_url")) {
-             return data["subscribe_url"] as String? + "?flag=sing-box";
+             return (data["subscribe_url"] as String?)?.toString() + "?flag=sing-box";
       }
     }
 
