@@ -1,4 +1,5 @@
 name: CI
+
 on:
   pull_request:
     paths-ignore:
@@ -16,6 +17,7 @@ on:
       - 'docs/**'
       - '.vscode/'
       - 'appcast.xml'
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -29,4 +31,3 @@ jobs:
     if: "${{!contains(github.event.head_commit.message, 'release: version')}}"
     with:
       upload-artifact: ${{ github.event_name == 'push' }}
-      
