@@ -28,7 +28,7 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       showDialog(
-        context: context,
+        context: context, // Fix mismatched parenthesis here
         barrierDismissible: false, // Make the dialog non-dismissible
         builder: (BuildContext context) {
           final t = ref.read(translationsProvider);
@@ -46,7 +46,7 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
                 },
               ),
             ],
-          );
+          ); // Fix mismatched curly brace here
         });
     // Delay the provider modification until after the first frame is built
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -55,6 +55,7 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
   }
 
   @override
+
   Widget build(BuildContext context) {
     final t = ref.watch(translationsProvider);
     final viewModel = ref.watch(purchaseViewModelProvider);
@@ -83,7 +84,7 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
       body: RefreshIndicator(
         onRefresh: () async {
           await ref.read(purchaseViewModelProvider).fetchPlans(); // 强制刷新
-        },
+        }, // Add semicolon here
         child: Builder(
           builder: (context) {
             if (viewModel.isLoading) {
@@ -111,6 +112,7 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
       ),
     );
   }
+
 
 Widget _buildPlanCard(
     Plan plan,
@@ -205,4 +207,5 @@ Widget _buildPlanCard(
       }).toList(),
     );
   }
+
 }

@@ -13,6 +13,9 @@ class LoginViewModel extends ChangeNotifier {
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
+  // Placeholder for savedUsername
+  String? get savedUsername => null;
+
   bool _isRememberMe = false;
   bool get isRememberMe => _isRememberMe;
 
@@ -22,7 +25,11 @@ class LoginViewModel extends ChangeNotifier {
   LoginViewModel({required AuthService authService})
       : _authService = authService {
     _loadSavedCredentials();
- _attemptSilentLogin();
+    _attemptSilentLogin();
+  }
+
+  // Placeholder for _attemptSilentLogin
+  void _attemptSilentLogin() {
   }
 
   Future<void> _loadSavedCredentials() async {
