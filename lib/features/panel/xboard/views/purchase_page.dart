@@ -46,12 +46,12 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
                 },
               ),
             ],
-          ); // Fix mismatched curly brace here
-        });
+          );
+        },
+      );
     // Delay the provider modification until after the first frame is built
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(purchaseViewModelProvider).fetchPlans();
-    });
   }
 
   @override
