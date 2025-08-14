@@ -44,7 +44,9 @@ class LoginViewModel extends ChangeNotifier {
       final difference = now.difference(savedDateTime);
 
       if (difference.inDays < 7) {
+        if (savedUsername != null) {
  usernameController.text = savedUsername;
+        }
  passwordController.text = savedPassword;
  _isRememberMe = savedRememberMe;
       } else {

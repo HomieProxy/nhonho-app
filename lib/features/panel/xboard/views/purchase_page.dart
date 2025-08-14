@@ -27,7 +27,7 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      showDialog(
+ showDialog(
         context: context, // Fix mismatched parenthesis here
         barrierDismissible: false, // Make the dialog non-dismissible
         builder: (BuildContext context) {
@@ -49,10 +49,11 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
           );
         },
       );
+    });
     // Delay the provider modification until after the first frame is built
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(purchaseViewModelProvider).fetchPlans();
-  }
+    });
 
   @override
 
@@ -84,7 +85,7 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
       body: RefreshIndicator(
         onRefresh: () async {
           await ref.read(purchaseViewModelProvider).fetchPlans(); // 强制刷新
-        }, // Add semicolon here
+ }, // Add semicolon here
         child: Builder(
           builder: (context) {
             if (viewModel.isLoading) {
@@ -112,6 +113,7 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
       ),
     );
   }
+
 
 
 Widget _buildPlanCard(
