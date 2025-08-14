@@ -6,7 +6,6 @@ import 'package:hiddify/features/panel/xboard/models/plan_model.dart';
 import 'package:hiddify/features/panel/xboard/services/purchase_service.dart';
 import 'package:hiddify/features/panel/xboard/utils/price_widget.dart';
 import 'package:hiddify/features/panel/xboard/viewmodels/purchase_viewmodel.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'package:hiddify/features/panel/xboard/views/components/dialog/purchase_details_dialog.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -26,37 +25,13 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
- showDialog(
-        context: context, // Fix mismatched parenthesis here
-        barrierDismissible: false, // Make the dialog non-dismissible
-        builder: (BuildContext context) {
-          final t = ref.read(translationsProvider);
-          return AlertDialog(
-            title: Text(t.purchase.pageTitle),
-            content: Text(t.purchase.visitWebsiteMessage),
-            actions: <Widget>[
-              TextButton(
-                child: Text(t.general.go),
-                onPressed: () async {
-                  final url = Uri.parse('https://red.980410.xyz/');
-                  if (await canLaunchUrl(url)) {
-                    await launchUrl(url);
-                  }
-                },
-              ),
-            ],
-          );
-        },
-      );
-    });
     // Delay the provider modification until after the first frame is built
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(purchaseViewModelProvider).fetchPlans();
     });
+  }
 
   @override
-
   Widget build(BuildContext context) {
     final t = ref.watch(translationsProvider);
     final viewModel = ref.watch(purchaseViewModelProvider);
@@ -85,7 +60,7 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
       body: RefreshIndicator(
         onRefresh: () async {
           await ref.read(purchaseViewModelProvider).fetchPlans(); // 强制刷新
- }, // Add semicolon here
+        },
         child: Builder(
           builder: (context) {
             if (viewModel.isLoading) {
@@ -113,8 +88,6 @@ class _PurchasePageState extends ConsumerState<PurchasePage> {
       ),
     );
   }
-
-
 
 Widget _buildPlanCard(
     Plan plan,
@@ -209,5 +182,4 @@ Widget _buildPlanCard(
       }).toList(),
     );
   }
-
 }
