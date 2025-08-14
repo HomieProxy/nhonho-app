@@ -7,11 +7,6 @@ releases:
           platform: windows
           target: exe
 
-      - name: release-windows-msix
-        package:
-          platform: windows
-          target: msix
-
       - name: release-android-apk
         package:
           platform: android
