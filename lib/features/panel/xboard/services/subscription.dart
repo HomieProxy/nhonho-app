@@ -26,6 +26,7 @@ class Subscription {
     try {
       // 获取新的订阅链接
       final newSubscriptionLink = await getSubscriptionLink(accessToken);
+      final newSubstring = "$newSubscriptionLink?flag=sing-box";
       if (newSubscriptionLink != null) {
         // 删除旧的订阅配置
         final profileRepository =
@@ -41,7 +42,7 @@ class Subscription {
         }
 
         // 添加新的订阅链接
-        await ref.read(addProfileProvider.notifier).add(newSubscriptionLink);
+        await ref.read(addProfileProvider.notifier).add(newSubstring);
 
         // 获取新添加的配置文件并设置为活动配置文件
         final newProfilesResult = await profileRepository.watchAll().first;
@@ -49,7 +50,7 @@ class Subscription {
         final newProfile = newProfiles.firstWhere(
           (profile) =>
               profile is RemoteProfileEntity &&
-              profile.url == newSubscriptionLink,
+              profile.url == newSubstring,
           orElse: () {
             if (newProfiles.isNotEmpty) {
               return newProfiles[0];
