@@ -177,18 +177,10 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                             onPressed: () {
                               context.go('/forget-password');
                             },
-                            style: TextButton.styleFrom(
-                              side: const BorderSide(color: Colors.black, width: 1.0), // Outside ring black
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                                side: const BorderSide(color: Colors.white, width: 2.0), // Inside ring white
-                              ),
-                              foregroundColor: Colors.black, // Text color black
-                            ),
                             child: Text(
                               t.login.forgotPassword,
                               style: TextStyle(
-                                color: Colors.black, // Explicitly set text color to black
+                                color: Theme.of(context).primaryColor,
                                 fontSize: 14,
                               ),
                             ),

@@ -22,31 +22,13 @@ class LoginViewModel extends ChangeNotifier {
   LoginViewModel({required AuthService authService})
       : _authService = authService {
     _loadSavedCredentials();
- _attemptSilentLogin();
   }
 
   Future<void> _loadSavedCredentials() async {
     final prefs = await SharedPreferences.getInstance();
- final savedPassword = prefs.getString('saved_password');
- final savedRememberMe = prefs.getBool('is_remember_me') ?? false;
- final savedTimestamp = prefs.getString('saved_timestamp');
-
-    if (savedUsername != null && savedPassword != null && savedRememberMe && savedTimestamp != null) {
-      final savedDateTime = DateTime.parse(savedTimestamp);
-      final now = DateTime.now();
-      final difference = now.difference(savedDateTime);
-
-      if (difference.inDays < 7) {
- usernameController.text = savedUsername;
- passwordController.text = savedPassword;
- _isRememberMe = savedRememberMe;
-      } else {
- _clearSavedCredentials();
-      }
-    } else {
- _clearSavedCredentials();
-    }
-
+    usernameController.text = prefs.getString('saved_username') ?? '';
+    passwordController.text = prefs.getString('saved_password') ?? '';
+    _isRememberMe = prefs.getBool('is_remember_me') ?? false;
     notifyListeners();
   }
 
@@ -55,20 +37,11 @@ class LoginViewModel extends ChangeNotifier {
     if (_isRememberMe) {
       await prefs.setString('saved_username', usernameController.text);
       await prefs.setString('saved_password', passwordController.text);
- await prefs.setString('saved_timestamp', DateTime.now().toIso8601String());
     } else {
- _clearSavedCredentials();
+      await prefs.remove('saved_username');
+      await prefs.remove('saved_password');
     }
     await prefs.setBool('is_remember_me', _isRememberMe);
-  }
-
-  Future<void> _clearSavedCredentials() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.remove('saved_username');
-    await prefs.remove('saved_password');
-    await prefs.remove('saved_timestamp');
-    _isRememberMe = false;
-    // No need to notifyListeners here, _loadSavedCredentials or the initial UI build will handle the state
   }
 
   void toggleRememberMe(bool value) {

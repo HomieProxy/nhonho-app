@@ -1,3 +1,5 @@
 This file contains notes about the origin of the files backed up in this folder.
 
 - purchase_page.dart: This file was originally located at lib/features/panel/xboard/views/purchase_page.dart.
+- login_viewmodel.dart: This file was originally located at lib/features/panel/xboard/viewmodels/login_viewmodel/login_viewmodel.dart
+- purchase_page.dart: This file was originally located at lib/features/panel/xboard/views/purchase_page.dart.
